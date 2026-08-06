@@ -1,0 +1,17 @@
+[book]
+title = "Computer Programming I — Lab Manual"
+authors = ["Yushintia Pramitarini, Ph.D."]
+description = "Hands-on C lab manual for 400521-004 Computer Programming I (2025)"
+language = "en"
+src = "src"
+
+[output.html]
+additional-css = ["theme/pdf.css"]
+no-section-label = false
+fold.enable = false
+playground.editable = false
+playground.copyable = true
+
+[output.html.search]
+enable = true
+limit-results = 20

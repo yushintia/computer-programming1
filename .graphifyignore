@@ -1,0 +1,5 @@
+book/
+theme/
+docs/*.pdf
+docs/*.jpg
+graphify-out/
