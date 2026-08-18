@@ -7,7 +7,7 @@
 | **Method** | Lecture (no code submission this week) |
 | **Prerequisites** | None |
 
-**Why this lab matters:** Every digital device runs on programs: your phone, your car's navigation system, your bank's ATM. This lab shows you where programs come from and how a human idea becomes instructions a computer can follow. Understanding the programming mindset of breaking a problem into small, ordered steps is a skill you will apply in every role that involves computing, whether you end up writing software, analyzing data, or managing systems.
+**Why this lab matters:** Every digital device runs on programs. Your phone runs programs. Your car's navigation system runs programs. Your bank's ATM runs programs too. This lab shows you where programs come from. You will learn how a human idea becomes instructions a computer can follow. You will practice breaking a problem into small, ordered steps. This is the programming mindset. You will use it in every job that involves computers, whether you write software, analyze data, or manage systems.
 
 **Time allocation**
 
@@ -19,20 +19,35 @@
 
 ---
 
+## Key Words Today
+
+A quick look-up list. You will meet each word again in the Background section below.
+
+| Word | Plain meaning |
+|------|---------------|
+| **Program** | A list of instructions that tells a computer what to do. |
+| **Programming language** | A strict way of writing instructions. A computer can understand it. |
+| **Algorithm** | A step-by-step plan to solve a problem. It works with no computer at all. |
+| **Pseudocode** | Plan text that looks like code. It is not real code. You cannot run it. |
+| **Compiler** | A tool that turns your code into a form the computer can run. |
+| **Variable** | A named box that holds a value. You will use these starting Week 3. |
+
+---
+
 ## Learning Outcomes
 
 By the end of this lab, you will be able to:
 
-1. State what a program is and describe the problem-to-algorithm-to-code pipeline.
-2. Write a simple pseudocode or flowchart for an everyday problem.
-3. Open your text editor, create a `.c` file, and run it with a compiler (or online).
-4. Locate and describe the course assessment model (Midterm 20%, Project 30%, Final 30%, Attendance 10%, Assignments 10%).
+1. Say what a program is. Describe the path from problem, to algorithm, to code.
+2. Write simple pseudocode or a flowchart for an everyday problem.
+3. Open your text editor. Create a `.c` file. Run it with a compiler (or online).
+4. Find and describe the course grading plan (Midterm 20%, Project 30%, Final 30%, Attendance 10%, Assignments 10%).
 
 ---
 
 ## Recap
 
-This is the first meeting; there is no prior week to recap.
+This is the first meeting. There is no prior week to recap.
 
 ---
 
@@ -42,22 +57,27 @@ This is the first meeting; there is no prior week to recap.
 
 A **program** is a set of instructions that tells a computer what to do.
 You, the programmer, write those instructions in a **programming language** (C in this course).
-The computer does exactly what you wrote: nothing more, nothing less.
+The computer does exactly what you wrote. Nothing more, nothing less.
 
 > **In plain words: programming language**
-> A programming language is a precise, structured way of writing instructions that both
-> a human can read and a compiler can translate into machine code. English is too
-> ambiguous for a computer (what does "make it bigger" mean exactly?). C uses strict
-> grammar rules so there is only one possible interpretation of every instruction.
+> A programming language is a strict way to write instructions.
+> A human can read it. A compiler can turn it into machine code.
+> English is not strict enough for a computer.
+> For example, what does "make it bigger" really mean?
+> C has strict grammar rules. Each instruction has only one meaning.
 >
-> Think of it like the difference between telling a friend "make the text bigger" and
-> writing in a legal contract "increase the font size to 14 points in Helvetica Bold."
+> Think about two ways to ask for a change.
+> A friend says, "make the text bigger."
+> A legal contract says, "set the font size to 14 points, Helvetica Bold."
 > The computer needs the contract version.
 
 > **In plain words: algorithm**
-> An algorithm is a step-by-step plan for solving a problem. Every step must be clear
-> and unambiguous. An algorithm is language-independent: the tea-making steps below
-> could be translated into C, Python, or carried out by a robot.
+> An algorithm is a step-by-step plan to solve a problem.
+> Every step must be clear. No step can be confusing.
+> An algorithm does not depend on any one language.
+> The tea-making steps below could become C code.
+> They could become Python code instead.
+> A robot could even follow them directly.
 
 ### From Problem to Code
 
@@ -96,11 +116,11 @@ The computer does exactly what you wrote: nothing more, nothing less.
 </svg>
 <p style="text-align:center;font-size:0.9em;color:#555;margin-top:-0.6em;"><em><strong>Figure 1.1.</strong> From problem to working code.</em></p>
 
-Before writing any code, you should be able to describe your algorithm in plain language or pseudocode.
+Before you write any code, describe your algorithm first. Use plain words or pseudocode.
 
 ### What Is an Algorithm?
 
-An algorithm is a precise, finite sequence of steps that solves a problem.
+An algorithm is a precise, finite list of steps that solves a problem.
 
 **Example: make tea**
 ```
@@ -113,14 +133,15 @@ An algorithm is a precise, finite sequence of steps that solves a problem.
 7. Add milk and sugar if desired.
 ```
 
-Good programs come from good algorithms, not the other way around.
+A good program starts from a good algorithm. Not the other way around.
 
 ### Pseudocode
 
-Pseudocode is informal, algorithm-level writing that looks like code but is not tied to any language.
-There is no single correct pseudocode syntax; clarity is what matters.
-Its purpose is to think through the logic before worrying about C syntax.
-You cannot run pseudocode through a compiler; it is a planning tool, like a rough sketch before a final drawing.
+Pseudocode is informal writing. It looks like code, but it is not real code.
+There is no single correct way to write pseudocode. Clarity is what matters most.
+Its job is to help you think through the logic. You do this before you worry about C syntax.
+You cannot run pseudocode on a compiler. It is a planning tool.
+Think of it like a rough sketch before a final drawing.
 
 **Example: find the larger of two numbers**
 ```
@@ -134,10 +155,14 @@ END IF
 
 > **Under the Hood: what is a computer?**
 >
-> At its core, a computer is a machine that can store data (in RAM) and run instructions (in the CPU).
-> The CPU performs a few billion simple operations per second: add, subtract, compare, jump, load, store.
-> Everything a program does (printing text, sorting a list, playing a video) is built from combinations of these primitives.
-> In this course you will write programs in C, which is close enough to the machine that you will start to see this.
+> A computer is a machine with two main jobs.
+> It stores data in RAM. It runs instructions in the CPU.
+> The CPU does a few billion simple steps every second.
+> These steps are things like add, subtract, compare, and store.
+> Every program is built from combinations of these simple steps.
+> This is true even for things like printing text or playing a video.
+> In this course you will write programs in C.
+> C sits close to the machine, so you will start to see this yourself.
 
 ---
 
@@ -164,8 +189,8 @@ Hello, Computer Programming I!
 Instructor: Yushintia Pramitarini
 ```
 
-You do not need to understand every line yet; that is Week 2's job.
-The goal right now is: does it compile and run on *your* machine?
+You do not need to understand every line yet. That is Week 2's job.
+Today, just answer one question: does it compile and run on *your* machine?
 
 ---
 
@@ -174,24 +199,24 @@ The goal right now is: does it compile and run on *your* machine?
 ### Exercise 1: Verify your toolchain (Part B)
 
 - Follow [Setup: Toolchain](../setup/toolchain.md) to install gcc and an editor.
-- Alternatively, open OnlineGDB or Programiz in a browser.
-- Type (do not copy-paste) the example above, compile, and run it.
-- Raise your hand if you see an error you cannot resolve.
+- Or, open OnlineGDB or Programiz in a browser instead.
+- Type the example above yourself. Do not copy-paste it. Then compile and run it.
+- Raise your hand if you see an error you cannot fix.
 
 ### Exercise 2: Pseudocode for a vending machine (Part B and C)
 
-Write pseudocode (not code) for the following problem:
+Write pseudocode (not code) for this problem:
 
 > A vending machine sells drinks for 1,500 won each.
-> A customer inserts coins. The machine should dispense a drink
-> and return change when the customer has inserted enough coins.
+> A customer inserts coins. The machine should give a drink.
+> It should also return change once the customer inserts enough coins.
 
 Your pseudocode should handle:
-- Accumulating the total inserted so far
-- Checking when the total is at least 1,500
-- Computing and dispensing change
+- Adding up the total money inserted so far
+- Checking when the total reaches at least 1,500
+- Working out and giving back the change
 
-There is no single correct answer. Discuss your solution with the person next to you.
+There is no single correct answer. Talk about your solution with the person next to you.
 
 ### Exercise 3: Run the provided program (Part C)
 
@@ -204,20 +229,21 @@ There is no single correct answer. Discuss your solution with the person next to
 
 ## Challenge Problem
 
-Design a flowchart (on paper or a drawing tool) for the following:
+Design a flowchart (on paper or a drawing tool) for this problem:
 
-> A student wants a program that reads their scores for three exams
-> and prints their average, and whether they passed (average at least 60) or failed.
+> A student wants a program that reads their scores for three exams.
+> The program should print their average.
+> It should also print whether they passed (average at least 60) or failed.
 
-You will implement this as actual C code in Week 5.
+You will turn this into real C code in Week 5.
 
 ---
 
 ## Common Pitfalls
 
 - **"I cannot find the terminal."** On Windows: search for "Command Prompt", "PowerShell", or "WSL". On macOS: search for "Terminal". On Linux: right-click the desktop and look for Terminal.
-- **"The compiler says 'command not found'."** gcc is not installed or not on your PATH. Use the online compiler today and fix the install before Week 2.
-- **Pseudocode is not code.** Do not worry about semicolons or exact syntax. Write it so a classmate could follow the steps.
+- **"The compiler says 'command not found'."** This means gcc is not installed, or it is not on your PATH. Use the online compiler today. Fix the install before Week 2.
+- **Pseudocode is not code.** Do not worry about semicolons or exact syntax. Write it so a classmate could follow your steps.
 
 ---
 
@@ -230,7 +256,7 @@ You will implement this as actual C code in Week 5.
 
 **Total: 10 points** (graded per [Assignments rubric](../appendix/grading-rubric.md))
 
-> No code to compile this week; the screenshot proves your environment works.
+> No code to compile this week. The screenshot proves your environment works.
 
 ---
 

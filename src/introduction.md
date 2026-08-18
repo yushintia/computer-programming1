@@ -9,24 +9,24 @@
 
 ## Who This Manual Is For
 
-This manual is for complete beginners. If you have never written a single line of code, you are exactly who we wrote it for. You do not need any prior background in programming, and you do not need to think of yourself as a "math person" or a "computer person" to succeed here.
+This manual is for complete beginners. Have you never written a single line of code? Then this manual is for you. You do not need any programming background. You do not need to see yourself as a "math person" or a "computer person" to succeed here.
 
-Programming is a skill, and like any skill, it grows with practice. Every professional developer once stared at their first error message with no idea what it meant. This course walks you through that journey one small, achievable step at a time.
+Programming is a skill. Like any skill, it grows with practice. Every professional developer once stared at their first error message. They had no idea what it meant, just like you might feel today. This course walks you through that journey. We take one small step at a time.
 
-Our goal is not to race through every feature of the C language. It is to help you build real problem-solving confidence: the ability to look at a problem, break it into steps, and turn those steps into working code. That way of thinking is what you will carry forward into every advanced course and every program you ever write.
+Our goal is not to race through every feature of the C language. Our goal is to build your real problem-solving confidence. This means you can look at a problem, break it into steps, and turn those steps into working code. You will carry this way of thinking into every advanced course. You will carry it into every program you ever write.
 
 ---
 
 ## Why C?
 
-C is a high-level language that stays close to the machine.
+C is a high-level language. It still stays close to the machine.
 Learning C teaches you:
 
 - How variables and data are stored in memory
-- How the CPU executes instructions one at a time
-- Why bugs like buffer overflows and off-by-one errors exist
+- How the CPU runs instructions one at a time
+- Why bugs like buffer overflows and off-by-one errors happen
 
-These insights prepare you for **System Programming**, **Computer Architecture**, and **Operating Systems**, which all build directly on what you learn here.
+These lessons prepare you for later courses. They build the base for **System Programming**, **Computer Architecture**, and **Operating Systems**.
 
 ---
 
