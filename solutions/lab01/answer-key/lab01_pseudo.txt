@@ -1,0 +1,51 @@
+Course    : 400521-004 Computer Programming I
+Instructor: Yushintia Pramitarini
+Name      : [Instructor Reference Solution]
+Student ID: N/A
+Date      : 2026-08-27
+Lab       : Lab 01: Course Introduction & Programming Concepts
+Filename  : lab01_pseudo.txt
+Description: Reference pseudocode for the vending machine exercise
+             (1,500-won drink; accumulate coins, dispense, return change).
+
+--------------------------------------------------------------------
+Vending machine pseudocode (drink price = 1,500 won)
+--------------------------------------------------------------------
+
+SET drink_price TO 1500
+SET total_inserted TO 0
+
+WHILE total_inserted < drink_price DO
+    DISPLAY "Insert a coin"
+    INPUT coin_value
+    SET total_inserted TO total_inserted + coin_value
+    DISPLAY "Total inserted so far: ", total_inserted
+END WHILE
+
+DISPENSE drink
+SET change TO total_inserted - drink_price
+
+IF change > 0 THEN
+    -- give back change using the largest coins first
+    SET num_500 TO change DIV 500
+    SET change  TO change MOD 500
+    SET num_100 TO change DIV 100
+    SET change  TO change MOD 100
+    SET num_50  TO change DIV 50
+    SET change  TO change MOD 50
+    SET num_10  TO change DIV 10
+
+    RETURN num_500 coins of 500 won
+    RETURN num_100 coins of 100 won
+    RETURN num_50  coins of 50 won
+    RETURN num_10  coins of 10 won
+ELSE
+    DISPLAY "Exact amount inserted, no change"
+END IF
+
+END
+
+Notes:
+- DIV means integer division (drop the remainder); MOD means remainder.
+- The WHILE loop keeps accepting coins until the total reaches at least
+  the drink price; only then is a drink dispensed and change computed.
