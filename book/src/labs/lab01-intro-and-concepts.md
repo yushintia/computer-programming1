@@ -178,7 +178,7 @@ This program will be provided as a file. Read it, then run it:
 
 int main(void) {
     printf("Hello, Computer Programming I!\n");
-    printf("Instructor: Yushintia Pramitarini\n");
+    printf("Professor: Yushintia Pramitarini\n");
     return 0;
 }
 ```
@@ -186,7 +186,7 @@ int main(void) {
 Expected output:
 ```
 Hello, Computer Programming I!
-Instructor: Yushintia Pramitarini
+Professor: Yushintia Pramitarini
 ```
 
 You do not need to understand every line yet. That is Week 2's job.
@@ -220,7 +220,7 @@ There is no single correct answer. Talk about your solution with the person next
 
 ### Exercise 3: Run the provided program (Part C)
 
-- Open `first.c` (provided by the instructor).
+- Open `first.c` (provided by the professor).
 - Compile it: `gcc first.c -o first`
 - Run it: `./first`
 - Take a screenshot of the terminal showing the output.

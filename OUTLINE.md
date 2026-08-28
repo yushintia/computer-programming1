@@ -1,6 +1,6 @@
 # Outline: Computer Programming I (400521-004)
 
-DEU 2025-1, 15 meetings × 3×50 min, C (C99). Instructor: Yushintia
+DEU 2025-1, 15 meetings × 3×50 min, C (C99). Professor: Yushintia
 Pramitarini, Ph.D. Text: K. N. King, *C Programming: A Modern Approach*,
 2nd ed. (primary); K&R, *The C Programming Language*, 2nd ed.
 (reference).
@@ -48,4 +48,4 @@ Attendance 10% (ongoing) · Assignments 10% (weekly, Weeks 2-13).
 Directory restructured to host book + slides together (see README.md);
 slides drafted for all 15 weeks, built and footer-checked against
 `themes/shintia.css` (same theme as the sibling courses — same
-instructor/department, not a separate brand).
+professor/department, not a separate brand).

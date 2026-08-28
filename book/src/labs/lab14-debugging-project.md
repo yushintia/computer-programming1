@@ -124,7 +124,7 @@ For a structured method to do this, see [Reading and Tracing a Program](../appen
 
 ### Exercise 1: Bug hunt (Part A)
 
-The instructor provides `buggy.c`, a program with 3 deliberate bugs (at least one compile-time,
+The professor provides `buggy.c`, a program with 3 deliberate bugs (at least one compile-time,
 one logic bug). Your task:
 1. Compile and read the errors.
 2. Use `printf`-tracing to find the logic bug.
@@ -162,7 +162,7 @@ The oral defense (30%) is in Week 15.
 | B: Grade Manager | Read student scores; compute stats; letter grades; formatted report |
 | C: Number Guessing Game | Configurable range; track attempts; high-score persistence |
 | D: Calculator Suite | Multi-function calculator with history; functions for each operation |
-| Custom | Propose your own to the instructor before Week 13 |
+| Custom | Propose your own to the professor before Week 13 |
 
 ### Submission Checklist
 

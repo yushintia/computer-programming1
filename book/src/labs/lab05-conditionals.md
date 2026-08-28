@@ -287,7 +287,7 @@ File: `lab05_menu.c`
 
 ### Exercise 3: Diagnostic assessment (Part B, ~10 min, ungraded)
 
-The instructor will provide a short set of questions (5 to 8 problems) covering Weeks 1 to 5.
+The professor will provide a short set of questions (5 to 8 problems) covering Weeks 1 to 5.
 Answer individually. Results will be used to adjust upcoming sessions and are not graded for marks.
 
 ---

@@ -27,7 +27,7 @@ There is no single correct answer.
 
 ## Exercise 3: Run the provided program
 
-- Open `first.c` (provided by the instructor).
+- Open `first.c` (provided by the professor).
 - Compile it: `gcc first.c -o first`
 - Run it: `./first`
 - Take a screenshot of the terminal showing the output.

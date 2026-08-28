@@ -5,7 +5,7 @@ Problem. Each lab below links only to its **problem statements**
 (`problems.md`) — no solutions are linked from this page.
 
 Answer keys exist in a separate `answer-key/` subfolder per lab, kept
-out of this index intentionally (instructor use only).
+out of this index intentionally (professor use only).
 
 | Lab | Topic | Status | Problems |
 |---|---|---|---|

@@ -8,7 +8,7 @@ and trace answers are intentionally NOT revealed here.
 
 ### Exercise 1: Bug hunt
 
-The instructor provides `buggy.c`, a program with 3 deliberate bugs (at
+The professor provides `buggy.c`, a program with 3 deliberate bugs (at
 least one compile-time, at least one logic bug). Your task:
 1. Compile and read the errors.
 2. Use `printf`-tracing to find the logic bug(s).

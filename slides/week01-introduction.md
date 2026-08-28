@@ -213,7 +213,7 @@ Each week has three class periods (차시), about 50 minutes each:
 
 <div class="cardlist">
 <div class="card"><div class="h">Part A: Lecture</div><div class="d">New concept, explained simply, always starting from a real short program</div></div>
-<div class="card"><div class="h">Part B: Guided Lab</div><div class="d">Work through exercises with your instructor, in the course lab manual</div></div>
+<div class="card"><div class="h">Part B: Guided Lab</div><div class="d">Work through exercises with your professor, in the course lab manual</div></div>
 <div class="card"><div class="h">Part C: Independent Work</div><div class="d">A challenge problem you solve on your own, with the week's deliverable</div></div>
 <div class="card"><div class="h">Every Week, a Deliverable</div><div class="d">Weeks 2-13 each have a small graded assignment - see the lab manual's submission rubric</div></div>
 </div>
@@ -321,7 +321,7 @@ academic integrity violation, same as copying from another student.
 <div class="cardlist">
 <div class="card"><div class="h">Attendance</div><div class="d">10% of the final grade, tracked every session</div></div>
 <div class="card"><div class="h">Late Arrival</div><div class="d">Arriving more than 15 minutes late counts as late; three lates equal one absence</div></div>
-<div class="card"><div class="h">Can't Attend?</div><div class="d">Email the instructor before class with your reason for an excused absence</div></div>
+<div class="card"><div class="h">Can't Attend?</div><div class="d">Email the professor before class with your reason for an excused absence</div></div>
 <div class="card"><div class="h">Late Work</div><div class="d">Loses 10% of that assignment's points per day late, up to 3 days</div></div>
 </div>
 
@@ -337,7 +337,7 @@ academic integrity violation, same as copying from another student.
 - **Other documented conditions:** reasonable accommodation based on
   need, arranged individually
 
-Contact the instructor early, and the Disability Student Support
+Contact the professor early, and the Disability Student Support
 Center or Academic Affairs Team, so accommodations are ready before
 you need them.
 
@@ -345,9 +345,9 @@ you need them.
 
 # Contact
 
-<div class="thread">How to reach the instructor.</div>
+<div class="thread">How to reach the professor.</div>
 
-- **Instructor:** Yushintia Pramitarini, Ph.D
+- **Professor:** Yushintia Pramitarini, Ph.D
 - **Office hours:** by appointment
 - **Course communication:** announcements and materials via the LMS
 

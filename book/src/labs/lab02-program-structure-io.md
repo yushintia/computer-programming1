@@ -188,7 +188,7 @@ Understanding each kind is the first step to reading code confidently.
 > When you open a second `{` inside the first, indent one more level, and so on.
 >
 > Indentation is not optional in a team or a course: unindented code is extremely hard to
-> debug. The compiler does not care; your reader - and your instructor - does.
+> debug. The compiler does not care; your reader - and your professor - does.
 
 > **In plain words: block (curly braces)**
 > A *block* is a group of one or more statements enclosed between `{` and `}` and treated
@@ -299,7 +299,7 @@ Rules:
 int main(void) {
     printf("===========================\n");
     printf("  Computer Programming I  \n");
-    printf("  Instructor: Y. Pramitar \n");
+    printf("  Professor: Y. Pramitar \n");
     printf("===========================\n");
     return 0;
 }
@@ -309,7 +309,7 @@ Expected output:
 ```
 ===========================
   Computer Programming I  
-  Instructor: Y. Pramitar 
+  Professor: Y. Pramitar 
 ===========================
 ```
 

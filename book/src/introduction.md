@@ -1,7 +1,7 @@
 # Introduction
 
 **Course:** 400521-004 컴퓨터프로그래밍 I · Computer Programming I  
-**Instructor:** Yushintia Pramitarini  
+**Professor:** Yushintia Pramitarini  
 **Year / Semester:** 2025 · Semester 1  
 **Format:** 15 meetings × 3 × 50 min · Language: C (C99)
 
@@ -161,7 +161,7 @@ Full rubrics are in [Appendix: Grading Rubrics](appendix/grading-rubric.md).
 - **Weekly assignments:** you may discuss ideas with classmates but must write your own code. Sharing source files or copying code is not permitted.
 - **Take-home project:** the project is strictly individual. You must be able to explain every line in the Week-15 oral defense. Submitting code you did not write and cannot explain is an academic integrity violation.
 - **Midterm:** closed collaboration, restricted network; open-book (compiler and reference sheets allowed).
-- When in doubt, ask the instructor before submitting, not after.
+- When in doubt, ask the professor before submitting, not after.
 
 ---
 

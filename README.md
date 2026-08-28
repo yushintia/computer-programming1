@@ -29,7 +29,7 @@ slides/
   _shared/roadmap.md        Act-0 roadmap graphic, paste into slot 2
   week01-introduction.md ... week15-final-exam.md   17-slot lecture decks
 landing/index.html          site root - links the book and every deck
-solutions/                  instructor answer keys (problems.md is public, answer-key/ is not built/published)
+solutions/                  professor answer keys (problems.md is public, answer-key/ is not built/published)
 docs/                        syllabus (silabus.md/.pdf/.jpg)
 ```
 
@@ -103,8 +103,8 @@ npm run build:pptx    # -> dist/slides/*.pptx
 
 All 15 lecture decks (Weeks 1-15) are drafted, built, and themed with
 `shintia.css` (the same theme as the sibling courses — same
-instructor/department). Slides teach each week's matching lab's Part
+professor/department). Slides teach each week's matching lab's Part
 A lecture content; the book covers the full guided exercises,
-challenge problems, and submission rubrics. Instructor answer keys
+challenge problems, and submission rubrics. Professor answer keys
 for the labs' exercises live in `solutions/`, split from the public
 problem statements — see `solutions/README.md`.

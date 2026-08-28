@@ -12,7 +12,7 @@
 | 년도 (Year) | 2025 |
 | 학기 (Semester) | 1학기 · Semester 1 |
 | 교원번호 (Faculty No.) | 15848 |
-| 교원명 (Instructor) | **Yushintia Pramitarini** |
+| 교원명 (Professor) | **Yushintia Pramitarini** |
 | 담당교목 (Course) | 400521-004 컴퓨터프로그래밍 I · Computer Programming I |
 | 학점/이론/실습 (Credits / Theory / Lab) | 3 · Lecture & Lab (강의 및 실습) |
 | 학습유형 (Learning type) | 06 플립러닝형 · Blended / Flipped |

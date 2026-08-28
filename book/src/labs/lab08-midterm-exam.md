@@ -57,7 +57,7 @@ This exam assesses all outcomes from Weeks 1 to 7:
 ## What to Bring
 
 - Your lab machine (or a laptop with gcc installed).
-- A printed or offline copy of the reference sheet (provided by instructor).
+- A printed or offline copy of the reference sheet (provided by professor).
 - No notes on electronic devices other than your own source files from labs.
 
 ---

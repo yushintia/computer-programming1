@@ -12,7 +12,7 @@ Every `.c` file must begin with a comment block:
 ```c
 /*
  * Course   : 400521-004 Computer Programming I
- * Instructor: Yushintia Pramitarini
+ * Professor: Yushintia Pramitarini
  * Name     : [Your Name]
  * Student ID: [Your ID]
  * Date     : [YYYY-MM-DD]

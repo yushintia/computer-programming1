@@ -41,7 +41,7 @@ the topic.
 
 | # | Slide | Rule |
 |---|---|---|
-| 1 | Title | Week #, topic, course code, instructor, date |
+| 1 | Title | Week #, topic, course code, professor, date |
 | 2 | Where we are | Shared roadmap graphic (`_shared/roadmap.md`), current week highlighted |
 | 3 | Recap + open wound | One sentence on what last week delivered, one sentence on what it left broken |
 

@@ -261,7 +261,7 @@ int main(void) {
 
 Indentation (4 spaces per level in this course) is only for the human
 reader. The compiler does not care - your reader, and your
-instructor, do. Braces `{ }` group multiple statements into one
+professor, do. Braces `{ }` group multiple statements into one
 block: without them, only the very next line belongs to an `if` or
 loop.
 
@@ -355,7 +355,7 @@ before `return`**.
 int main(void) {
     printf("===========================\n");
     printf("  Computer Programming I  \n");
-    printf("  Instructor: Y. Pramitar \n");
+    printf("  Professor: Y. Pramitar \n");
     printf("===========================\n");
     return 0;
 }
