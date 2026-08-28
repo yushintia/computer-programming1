@@ -1,0 +1,14 @@
+{
+  "name": "computer-programming1-slides",
+  "private": true,
+  "scripts": {
+    "preview": "npx --yes @marp-team/marp-cli -s slides --theme-set themes/shintia.css --html",
+    "build:html": "npx --yes @marp-team/marp-cli -I slides --theme-set themes/shintia.css --html --allow-local-files -o dist/slides",
+    "build:pdf": "npx --yes @marp-team/marp-cli -I slides --theme-set themes/shintia.css --pdf --allow-local-files -o dist/slides",
+    "build:pptx": "npx --yes @marp-team/marp-cli -I slides --theme-set themes/shintia.css --pptx --allow-local-files -o dist/slides",
+    "build:book-pdfs": "mdbook build book && node scripts/build-book-pdfs.js"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.0.1"
+  }
+}

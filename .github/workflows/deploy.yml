@@ -1,4 +1,4 @@
-name: Deploy mdBook to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -17,30 +17,38 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MDBOOK_VERSION: 0.5.2
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
 
-      - name: Install mdBook
+      - name: Install mdBook v0.5.2
         run: |
-          mkdir -p "$HOME/.local/bin"
-          curl -sSL \
-            "https://github.com/rust-lang/mdBook/releases/download/v${MDBOOK_VERSION}/mdbook-v${MDBOOK_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
-            | tar -xz --directory "$HOME/.local/bin"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.5.2/mdbook-v0.5.2-x86_64-unknown-linux-gnu.tar.gz \
+            | tar xz -C /usr/local/bin
 
       - name: Build book
-        run: mdbook build
+        run: mdbook build book --dest-dir "$GITHUB_WORKSPACE/_site/book"
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - name: Setup Node
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: 20
+
+      - name: Build slides
+        run: npx --yes @marp-team/marp-cli --input-dir slides --output "$GITHUB_WORKSPACE/_site/slides" --theme-set themes/shintia.css --html --allow-local-files
+
+      - name: Build book chapter PDFs
+        run: node scripts/build-book-pdfs.js "$GITHUB_WORKSPACE/_site/book" "$GITHUB_WORKSPACE/_site/book/pdf"
+
+      - name: Copy shared assets
+        run: cp -r assets "$GITHUB_WORKSPACE/_site/assets"
+
+      - name: Add landing page
+        run: cp landing/index.html "$GITHUB_WORKSPACE/_site/index.html"
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
-          path: book
+          path: _site
 
   deploy:
     needs: build
@@ -51,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.0
