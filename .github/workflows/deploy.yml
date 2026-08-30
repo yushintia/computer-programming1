@@ -40,7 +40,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libreoffice
 
       - name: Build slides (PPTX)
-        run: npx --yes @marp-team/marp-cli --input-dir slides --output "$GITHUB_WORKSPACE/_site/slides" --theme-set themes/shintia.css --html --pptx --allow-local-files
+        run: npx --yes @marp-team/marp-cli --input-dir slides --output "$GITHUB_WORKSPACE/_site/slides" --theme-set themes/shintia.css --html --pptx --allow-local-files --parallel 1 --browser-timeout 120
 
       - name: Build book chapter PDFs
         run: node scripts/build-book-pdfs.js "$GITHUB_WORKSPACE/_site/book" "$GITHUB_WORKSPACE/_site/book/pdf"
