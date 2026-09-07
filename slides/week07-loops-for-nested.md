@@ -300,7 +300,7 @@ each row is just that row number's own multiplication table.
 
 <!-- Second worked example -->
 
-# Worked Example: Triangle Pattern
+# Worked Example: Triangle Pattern (1/2)
 
 ```c
 int main(void) {
@@ -316,6 +316,10 @@ int main(void) {
     return 0;
 }
 ```
+
+---
+
+# Worked Example: Triangle Pattern (2/2)
 
 **Sample output (rows = 4):**
 ```

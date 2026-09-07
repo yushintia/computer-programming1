@@ -336,7 +336,7 @@ already sorted.
 
 <!-- SLOT N-2: Worked example -->
 
-# Worked Example: Array Statistics
+# Worked Example: Array Statistics (1/2)
 
 ```c
 #include <stdio.h>
@@ -351,7 +351,16 @@ int main(void) {
         if (a[i] < min) min = a[i];
         if (a[i] > max) max = a[i];
     }
+```
 
+The loop visits every element once, updating a running sum, minimum,
+and maximum together - one pass, three statistics.
+
+---
+
+# Worked Example: Array Statistics (2/2)
+
+```c
     printf("Sum: %d\n", sum);
     printf("Avg: %.2f\n", (double)sum / N);
     printf("Min: %d\n", min);

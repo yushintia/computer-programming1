@@ -352,6 +352,16 @@ Hello, A! You are 20 years old.
 
 ---
 
+# `printf` Precision: One New Piece
+
+In `%.2f`, the `.2` is the **precision**: how many digits to print
+after the decimal point. `%.2f` prints 2 digits, `%.4f` prints 4 - the
+stored value keeps its full precision, only the display is shortened.
+(Lab 4 covers the rest of a format specifier - width, alignment, and
+more.)
+
+---
+
 # Worked Example: Integer vs. Float Division
 
 ```c

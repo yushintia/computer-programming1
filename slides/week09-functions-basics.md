@@ -249,7 +249,7 @@ Call it with `print_line(30);` - no `return` is needed (or write
 
 <!-- SLOT N-2: Worked example -->
 
-# Worked Example: A Mini Math Library
+# Worked Example: A Mini Math Library (1/2)
 
 ```c
 #include <stdio.h>
@@ -264,7 +264,16 @@ int main(void) {
     printf("is_prime(15) = %d\n", is_prime(15));
     return 0;
 }
+```
 
+The three prototypes above let `main` call these functions before
+their real bodies appear below.
+
+---
+
+# Worked Example: A Mini Math Library (2/2)
+
+```c
 int max(int a, int b) { return (a > b) ? a : b; }
 int min(int a, int b) { return (a < b) ? a : b; }
 

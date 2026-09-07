@@ -296,6 +296,14 @@ Hello, A! You are 20 years old.
 
 ### Example 2: Integer vs float division
 
+> **In plain words: printf precision**
+> In a format specifier like `%.2f`, the `.2` is the *precision*: how many
+> digits to print after the decimal point. `%.2f` prints 2 digits, `%.4f`
+> prints 4. `printf("%.2f", 3.14159)` prints `3.14` - the extra digits are
+> cut from the display only; the stored value itself is unchanged. (Lab 4
+> covers the rest of what a format specifier can do - field width,
+> alignment, and more - in full detail.)
+
 ```c
 /* lab03_division.c */
 #include <stdio.h>
