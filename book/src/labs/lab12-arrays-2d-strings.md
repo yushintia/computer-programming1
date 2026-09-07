@@ -305,6 +305,113 @@ Write a function `void transpose(int m[][N], int n)` that transposes a square ma
 
 ---
 
+## Practice Problems
+
+These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.
+
+### Practice 1: Word reversal
+
+Write a program that reads a single word (no spaces) and prints it reversed. Reverse the characters in place by swapping the first and last, then the second and second-to-last, and so on — do not use a library reverse function.
+
+File: `lab12_practice1_reverse.c`
+
+**Sample run:**
+```
+Enter a word: hello
+Reversed: olleh
+```
+
+### Practice 2: Letter counter
+
+Write a program that reads a sentence (use `fgets`, up to 99 characters) and a single letter, then counts how many times that letter appears in the sentence, ignoring uppercase/lowercase differences (use `tolower`).
+
+File: `lab12_practice2_letter_count.c`
+
+**Sample run:**
+```
+Enter a sentence: The quick brown fox
+Enter a letter to count: o
+'o' appears 2 time(s)
+```
+
+### Practice 3: Classroom seating chart
+
+A classroom has 3 rows of 4 seats, stored as a 2-D `char` array where `'X'` means occupied and `'.'` means empty. Read the grid one row at a time (each row entered as a 4-character string), print the grid back, then print how many empty seats are in each row.
+
+File: `lab12_practice3_seating.c`
+
+**Sample run:**
+```
+Row 1: X.X.
+Row 2: ....
+Row 3: XXXX
+
+X.X.
+....
+XXXX
+Row 1 empty seats: 2
+Row 2 empty seats: 4
+Row 3 empty seats: 0
+```
+
+### Practice 4: Tic-tac-toe winner check
+
+Read a 3x3 tic-tac-toe board into a 2-D `char` array, one row at a time as a 3-character string of `'X'`, `'O'`, or `'.'`. Write a function that checks every row, every column, and both diagonals for three matching non-`'.'` characters, and print the winner (`"X"` or `"O"`), or `"No winner"` if nobody has three in a row.
+
+File: `lab12_practice4_tictactoe.c`
+
+**Sample run:**
+```
+Row 1: XXX
+Row 2: OO.
+Row 3: O..
+Winner: X
+```
+
+### Practice 5: Caesar cipher encoder
+
+Write a program that reads a lowercase word (letters only) and an integer shift amount, then prints the word encoded with a Caesar cipher: each letter is shifted forward in the alphabet by the shift amount, wrapping around from `'z'` back to `'a'`.
+
+File: `lab12_practice5_caesar.c`
+
+**Sample run:**
+```
+Enter a lowercase word: xyz
+Enter shift amount: 3
+Encoded: abc
+```
+
+### Practice 6: Longest word finder
+
+Read 5 words into an array of strings (`char words[5][20]`). Write a function that finds the index of the longest word using `strlen` (on a tie, keep the first one found), then print that word together with its length.
+
+File: `lab12_practice6_longest_word.c`
+
+**Sample run:**
+```
+Word 1: cat
+Word 2: elephant
+Word 3: dog
+Word 4: hippopotamus
+Word 5: ox
+Longest word: hippopotamus (12 letters)
+```
+
+### Practice 7: Magic square checker
+
+Read a 3x3 integer grid. Write a function `is_magic_square` that returns 1 if every row sum, every column sum, and both diagonal sums are all equal to each other, and 0 otherwise. Print whether the entered grid is a magic square.
+
+File: `lab12_practice7_magic_square.c`
+
+**Sample run:**
+```
+Enter 9 integers for a 3x3 grid (row by row):
+2 7 6 9 5 1 4 3 8
+This grid IS a magic square.
+```
+
+---
+
 ## Common Pitfalls
 
 | Mistake | Symptom | Fix |
