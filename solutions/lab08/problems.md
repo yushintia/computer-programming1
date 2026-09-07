@@ -5,14 +5,22 @@
 
 **Practice 1:** Read N and print the sum of odd numbers from 1 to N.
 
+File: `lab08_practice1_sum_odds.c`
+
 **Practice 2:** Read a temperature in Celsius and classify it:
 - Below 0: "Freezing"
 - 0 to 15: "Cold"
 - 16 to 30: "Comfortable"
 - Above 30: "Hot"
 
+File: `lab08_practice2_celsius.c`
+
 **Practice 3:** Read numbers until the user enters 0. Print the count of positive numbers,
 the count of negative numbers, and the average of all entered values.
 
+File: `lab08_practice3_pos_neg_avg.c`
+
 **Practice 4:** Print the numbers 1 to 50, but for multiples of 3 print "Fizz",
 for multiples of 5 print "Buzz", and for multiples of both print "FizzBuzz".
+
+File: `lab08_practice4_fizzbuzz.c`

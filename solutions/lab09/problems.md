@@ -45,6 +45,8 @@ integer `n` has.
 Write a function `int reverse_num(int n)` that reverses the digits of `n`.
 Test both with several inputs including 0 and negative numbers.
 
+File: `lab09_digits.c`
+
 ## Practice Problems
 
 These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.

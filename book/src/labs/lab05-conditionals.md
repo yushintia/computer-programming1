@@ -297,6 +297,8 @@ Answer individually. Results will be used to adjust upcoming sessions and are no
 Write a program that takes three integers and prints them in **ascending order**
 without using arrays or sorting functions. Use only `if-else`.
 
+File: `lab05_sort_three.c`
+
 ---
 
 ## Practice Problems

@@ -56,6 +56,8 @@ Write a program that reads a price in Korean won and prints the breakdown in:
 Example: 127,300 won gives 2 x 50,000 + 2 x 10,000 + 1 x 5,000 + 2 x 1,000
 + 300 won coins.
 
+File: `lab04_challenge_won.c`
+
 ## Practice Problems
 
 These are ungraded - extra practice for the concepts in this lab. Solutions are not distributed with this page.

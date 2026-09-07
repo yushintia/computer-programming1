@@ -28,6 +28,8 @@ Add a function `void sort_by_score(Student r[], int n)` that sorts the
 roster in descending order of score using bubble sort.
 Print the sorted roster.
 
+File: `lab13_sort_challenge.c`
+
 ## Practice Problems
 
 These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.

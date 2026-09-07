@@ -303,6 +303,8 @@ File: `lab12_names.c`
 Write a function `void transpose(int m[][N], int n)` that transposes a square matrix in-place
 (swaps element [r][c] with element [c][r]).
 
+File: `lab12_transpose.c`
+
 ---
 
 ## Practice Problems

@@ -384,6 +384,8 @@ Write a program that prints a multiplication table header for the 5-times table:
 ```
 Write out all 10 `printf` calls by hand (we will use loops starting Week 6).
 
+File: `lab02_challenge_times_table.c`
+
 ---
 
 ## Practice Problems

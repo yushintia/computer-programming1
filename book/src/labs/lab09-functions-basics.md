@@ -269,6 +269,8 @@ Write a function `int count_digits(int n)` that counts how many digits the integ
 Write a function `int reverse_num(int n)` that reverses the digits of `n`.
 Test both with several inputs including 0 and negative numbers.
 
+File: `lab09_digits.c`
+
 ---
 
 ## Practice Problems

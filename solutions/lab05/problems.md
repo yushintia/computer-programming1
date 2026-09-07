@@ -30,6 +30,8 @@ File: `lab05_menu.c`
 Write a program that takes three integers and prints them in **ascending order**
 without using arrays or sorting functions. Use only `if-else`.
 
+File: `lab05_sort_three.c`
+
 ## Practice Problems
 
 These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.

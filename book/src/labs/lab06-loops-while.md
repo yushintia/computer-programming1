@@ -335,6 +335,8 @@ You will practice systematic debugging in Week 14.
 Write a program that finds and prints all **perfect numbers** up to 1000.
 A perfect number equals the sum of its proper divisors (e.g., 6 = 1 + 2 + 3).
 
+File: `lab06_perfect.c`
+
 ---
 
 ## Practice Problems

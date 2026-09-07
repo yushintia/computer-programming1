@@ -358,6 +358,8 @@ Units:     5
 ```
 Hint: use integer division and modulo. For example, `2025 / 1000` gives `2`, and `2025 % 1000` gives `025`.
 
+File: `lab03_challenge_digits.c`
+
 ---
 
 ## Practice Problems

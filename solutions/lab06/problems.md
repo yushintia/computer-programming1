@@ -29,6 +29,8 @@ File: `lab06_guess.c`
 Write a program that finds and prints all **perfect numbers** up to 1000.
 A perfect number equals the sum of its proper divisors (e.g., 6 = 1 + 2 + 3).
 
+File: `lab06_perfect.c`
+
 ## Practice Problems
 
 These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.

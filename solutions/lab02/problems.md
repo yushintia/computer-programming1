@@ -47,6 +47,8 @@ Write a program that prints a multiplication table for the 5-times table:
 
 Write out all 10 `printf` calls by hand (loops arrive in Week 6).
 
+File: `lab02_challenge_times_table.c`
+
 ## Practice Problems
 
 These are ungraded - extra practice for the concepts in this lab. Solutions are not distributed with this page.

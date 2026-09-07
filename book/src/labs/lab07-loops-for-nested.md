@@ -360,6 +360,8 @@ Print a diamond pattern:
 ```
 The number of rows in the top half is read from the user.
 
+File: `lab07_diamond.c`
+
 ---
 
 ## Practice Problems

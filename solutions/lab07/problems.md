@@ -51,6 +51,8 @@ Print a diamond pattern:
 ```
 The number of rows in the top half is read from the user.
 
+File: `lab07_diamond.c`
+
 ## Practice Problems
 
 These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.

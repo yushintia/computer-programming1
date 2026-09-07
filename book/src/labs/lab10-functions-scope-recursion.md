@@ -270,6 +270,8 @@ Write a recursive function `int gcd(int a, int b)` using the Euclidean algorithm
 
 Compare with an iterative version and verify they give the same results.
 
+File: `lab10_gcd.c`
+
 ---
 
 ## Practice Problems

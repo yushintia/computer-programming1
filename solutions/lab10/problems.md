@@ -42,6 +42,8 @@ Write a recursive function `int gcd(int a, int b)` using the Euclidean algorithm
 
 Compare with an iterative version and verify they give the same results.
 
+File: `lab10_gcd.c`
+
 ## Practice Problems
 
 These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.

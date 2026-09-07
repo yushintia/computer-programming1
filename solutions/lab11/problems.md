@@ -34,6 +34,8 @@ File: `lab11_rotate.c`
 Write a function that checks whether an array is a **palindrome**
 (reads the same forwards and backwards). Return 1 if yes, 0 if no.
 
+File: `lab11_palindrome.c`
+
 ## Practice Problems
 
 These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.
