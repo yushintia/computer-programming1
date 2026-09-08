@@ -275,7 +275,7 @@ File: `lab09_digits.c`
 
 ## Practice Problems
 
-These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.
+These are ungraded: extra practice for the concepts in this lab. Solutions are not distributed with this page.
 
 ### Practice 1: Road trip distance converter
 

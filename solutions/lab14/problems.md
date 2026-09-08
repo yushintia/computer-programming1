@@ -37,7 +37,7 @@ individual semester project, not a generic coding problem.)
 
 ## Practice Problems
 
-These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page. Each problem below shows a short buggy snippet; find and fix every bug, add a `/* BUG FIX: ... */` comment next to each change (as in Exercise 1), and submit the corrected, complete program under the given filename.
+These are ungraded: extra practice for the concepts in this lab. Solutions are not distributed with this page. Each problem below shows a short buggy snippet; find and fix every bug, add a `/* BUG FIX: ... */` comment next to each change (as in Exercise 1), and submit the corrected, complete program under the given filename.
 
 ### Practice 1: Fix the temperature converter
 

@@ -43,11 +43,11 @@ File: `lab12_transpose.c`
 
 ## Practice Problems
 
-These are ungraded — extra practice for the concepts in this lab. Solutions are not distributed with this page.
+These are ungraded: extra practice for the concepts in this lab. Solutions are not distributed with this page.
 
 ### Practice 1: Word reversal
 
-Write a program that reads a single word (no spaces) and prints it reversed. Reverse the characters in place by swapping the first and last, then the second and second-to-last, and so on — do not use a library reverse function.
+Write a program that reads a single word (no spaces) and prints it reversed. Reverse the characters in place by swapping the first and last, then the second and second-to-last, and so on; do not use a library reverse function.
 
 File: `lab12_practice1_reverse.c`
 
