@@ -506,7 +506,7 @@ For a step-by-step method to trace these algorithms yourself, see
 #define N 8
 
 int main(void) {
-    int a[N] = {34, 17, 88, 5, 62, 41, 99, 23};
+    int a[N] = {34, 17, 88, 5, 62, 41, 99, 24};
     int sum = 0, min = a[0], max = a[0];
 
     for (int i = 0; i < N; i++) {
@@ -528,7 +528,7 @@ int main(void) {
 | Line | What it does |
 |------|-------------|
 | `#define N 8` | A named constant. Every occurrence of `N` in the file will be replaced by `8` before compiling. Using `N` everywhere means you change the size in one place and the rest updates automatically. |
-| `int a[N] = {34, 17, 88, 5, 62, 41, 99, 23};` | Declares an array of 8 integers and fills it with specific values at the same time. `a[0]` is 34, `a[1]` is 17, and so on. |
+| `int a[N] = {34, 17, 88, 5, 62, 41, 99, 24};` | Declares an array of 8 integers and fills it with specific values at the same time. `a[0]` is 34, `a[1]` is 17, and so on. |
 | `int sum = 0, min = a[0], max = a[0];` | Start sum at 0 (nothing accumulated yet). Start both min and max at `a[0]`, the first element. This is a standard pattern: assume the first element is both smallest and largest until proven otherwise. |
 | `for (int i = 0; i < N; i++)` | Loop from index 0 to index 7 (N-1). We use `i < N`, not `i <= N`, because the last valid index is N-1. |
 | `sum += a[i];` | Add the current element to the running total. After the loop, `sum` holds the total of all 8 values. |
@@ -538,8 +538,8 @@ int main(void) {
 
 **Expected output:**
 ```
-Sum: 369
-Avg: 46.12
+Sum: 370
+Avg: 46.25
 Min: 5
 Max: 99
 ```

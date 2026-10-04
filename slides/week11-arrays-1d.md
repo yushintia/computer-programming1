@@ -345,7 +345,7 @@ already sorted.
 #define N 8
 
 int main(void) {
-    int a[N] = {34, 17, 88, 5, 62, 41, 99, 23};
+    int a[N] = {34, 17, 88, 5, 62, 41, 99, 24};
     int sum = 0, min = a[0], max = a[0];
 
     for (int i = 0; i < N; i++) {
@@ -383,7 +383,7 @@ and maximum together - one pass, three statistics.
 | `if (a[i] < min) min = a[i];` | Updates the running minimum only when a smaller value shows up |
 | `(double)sum / N` | Casts before dividing, so the average keeps its decimal part |
 
-**Output:** `Sum: 369`  `Avg: 46.12`  `Min: 5`  `Max: 99`
+**Output:** `Sum: 370`  `Avg: 46.25`  `Min: 5`  `Max: 99`
 
 ---
 
