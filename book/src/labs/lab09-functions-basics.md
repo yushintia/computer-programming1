@@ -255,7 +255,7 @@ File: `lab09_validator.c`
 ### Exercise 3: Modular grade printer (Part C)
 
 Write three functions:
-- `double read_score(const char* label)` prints `label`, reads a double 0 to 100.
+- `double read_score(char label[])` prints `label`, reads a double 0 to 100.
 - `char grade_letter(double score)` returns the letter grade ('A' to 'F').
 - `void print_report(double s1, double s2, double s3)` prints each score with its grade and the average.
 

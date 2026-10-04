@@ -305,6 +305,122 @@ Sample output (rows = 4):
 * * * * 
 ```
 
+### Example 3: Padding a row with spaces
+
+To push a row to the right, print spaces first. The number of spaces is the field width
+minus the length of the text.
+
+```c
+/* lab07_pad_demo.c */
+#include <stdio.h>
+
+int main(void) {
+    int width = 8;
+    int len = 2;
+    for (int s = 0; s < width - len; s++) {
+        printf(" ");
+    }
+    printf("Hi\n");
+    return 0;
+}
+```
+
+Expected output: six spaces, then `Hi`. The loop runs `width - len` = 6 times (s = 0 to 5).
+For a shape, use one padding loop per row, then the loop that prints the symbols.
+
+### Example 4: Nested loops with an `if`
+
+Inside the inner loop, an `if` chooses what to print for each cell. This grid prints `*`
+on the diagonal (where row equals column) and `.` everywhere else.
+
+```c
+/* lab07_diag_demo.c */
+#include <stdio.h>
+
+int main(void) {
+    for (int r = 1; r <= 4; r++) {
+        for (int c = 1; c <= 4; c++) {
+            if (r == c) {
+                printf("* ");
+            } else {
+                printf(". ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+
+Expected output:
+```
+* . . .
+. * . .
+. . * .
+. . . *
+```
+
+The outer loop picks the row. For each row, the inner loop visits all four columns, and the
+`if` decides which symbol to print. The `if` runs 16 times in total (4 rows x 4 columns).
+
+### Example 5: Tracking a largest and smallest value
+
+Start by treating the first value as both the largest and the smallest. Then compare each
+new value with them. This demo makes its values with a formula, so no input is needed.
+
+```c
+/* lab07_maxmin_demo.c */
+#include <stdio.h>
+
+int main(void) {
+    int value = 7;                       /* first value: 7 */
+    int largest = value, smallest = value;
+    for (int i = 2; i <= 4; i++) {
+        value = i * 7 % 10;              /* produces 4, then 1, then 8 */
+        if (value > largest)  largest = value;
+        if (value < smallest) smallest = value;
+    }
+    printf("Largest: %d\n", largest);
+    printf("Smallest: %d\n", smallest);
+    return 0;
+}
+```
+
+| Step | `value` | `largest` | `smallest` |
+|------|---------|-----------|------------|
+| start | 7 | 7 | 7 |
+| i = 2 | 4 | 7 | 4 |
+| i = 3 | 1 | 7 | 1 |
+| i = 4 | 8 | 8 | 1 |
+
+Expected output: `Largest: 8` and `Smallest: 1`.
+
+### Example 6: Peeling off digits
+
+`n % 10` gives the last digit of `n`, and `n / 10` removes that last digit. Repeating both
+steps until `n` is 0 visits the digits from right to left.
+
+```c
+/* lab07_digits_demo.c */
+#include <stdio.h>
+
+int main(void) {
+    for (int n = 4096; n > 0; n /= 10) {
+        printf("%d\n", n % 10);
+    }
+    return 0;
+}
+```
+
+| `n` at the start of the pass | `n % 10` (printed) | `n / 10` (next `n`) |
+|------------------------------|--------------------|---------------------|
+| 4096 | 6 | 409 |
+| 409 | 9 | 40 |
+| 40 | 0 | 4 |
+| 4 | 4 | 0 (loop stops) |
+
+Expected output: `6`, `9`, `0`, `4`, each on its own line.
+
 ---
 
 ## Guided In-Lab Exercises
@@ -348,7 +464,13 @@ Files: `lab07_rev_a.c`, `lab07_rev_b.c`, `lab07_rev_c.c`
 
 ## Challenge Problem
 
-Print a diamond pattern:
+**Challenge A: Perfect numbers.** Write a program that finds and prints all **perfect numbers**
+up to 1000. A perfect number equals the sum of its proper divisors (e.g., 6 = 1 + 2 + 3).
+Use an outer loop over the candidates and an inner loop over the possible divisors.
+
+File: `lab07_perfect.c`
+
+**Challenge B: Diamond.** Print a diamond pattern:
 ```
     *
    ***
@@ -494,5 +616,5 @@ Enter range end: 500   → Armstrong numbers: 153 370 371 407
 
 - King, Ch. 6 "Loops"
 - K&R, Ch. 3 "Control Flow"
-- Practice the review problems. **Midterm is next week** (Week 8, covers Weeks 1 to 7).
+- Practice the review problems in Exercise 3 until each one runs without help.
 - [Pseudocode & Flowcharts](../appendix/pseudocode-flowchart.md) - symbol reference and worked examples

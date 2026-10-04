@@ -274,6 +274,40 @@ Add a function that computes the class average score.
 
 File: `lab13_records.c`
 
+### Exercise 3: Course grade book (Part C)
+
+Define a `typedef struct` named `Course` with a `char name[20]`, an `int credits`, and a `double grade_points`
+(for example 4.0 for an A, or 3.5 for a B+). Read 4 courses into an array, then write:
+- `double weighted_gpa(Course c[], int n)`: returns the sum of `credits * grade_points`
+  divided by the total credits.
+- `Course most_credits(Course c[], int n)`: returns a copy of the course with the most credits.
+
+Print the weighted GPA with 2 decimal places, then print the name and credits of the course
+returned by `most_credits`.
+
+Sample run:
+```
+Course 1 name: Math
+Credits: 3
+Grade points: 4.0
+Course 2 name: Art
+Credits: 2
+Grade points: 3.5
+Course 3 name: Physics
+Credits: 4
+Grade points: 3.0
+Course 4 name: Music
+Credits: 1
+Grade points: 4.0
+Weighted GPA: 3.50
+Most credits: Physics (4)
+```
+
+Hint: the total credits is an `int`. Cast it to `double` before dividing, or the decimal
+part of the GPA is lost.
+
+File: `lab13_gradebook.c`
+
 ---
 
 ## Challenge Problem
@@ -404,8 +438,9 @@ Players at level 6 or above: 2
 
 | Deliverable | Filename | Points |
 |-------------|----------|--------|
-| Contact book | `lab13_contacts.c` | 4 |
-| Student records | `lab13_records.c` | 6 |
+| Contact book | `lab13_contacts.c` | 3 |
+| Student records | `lab13_records.c` | 4 |
+| Course grade book | `lab13_gradebook.c` | 3 |
 
 **Total: 10 points**
 

@@ -226,6 +226,47 @@ int digit_sum(int n) {
 }
 ```
 
+### Example 3: Recursion with two calls
+
+A recursive function can call itself twice in one step. This `sum_range` adds the integers
+from `lo` to `hi` by splitting the range in half, so each call makes two smaller calls:
+
+```c
+/* lab10_range_demo.c */
+#include <stdio.h>
+
+int sum_range(int lo, int hi) {
+    if (lo == hi) return lo;                              /* base case: one number */
+    int mid = (lo + hi) / 2;
+    return sum_range(lo, mid) + sum_range(mid + 1, hi);  /* two recursive calls */
+}
+
+int main(void) {
+    printf("sum_range(1, 4) = %d\n", sum_range(1, 4));
+    return 0;
+}
+```
+
+**Expected output:** `sum_range(1, 4) = 10`
+
+**Trace:**
+```
+sum_range(1, 4): mid = 2, calls sum_range(1, 2) and sum_range(3, 4)
+  sum_range(1, 2): mid = 1, calls sum_range(1, 1) and sum_range(2, 2)
+    sum_range(1, 1) returns 1
+    sum_range(2, 2) returns 2
+  sum_range(1, 2) returns 3
+  sum_range(3, 4): mid = 3, calls sum_range(3, 3) and sum_range(4, 4)
+    sum_range(3, 3) returns 3
+    sum_range(4, 4) returns 4
+  sum_range(3, 4) returns 7
+sum_range(1, 4) returns 3 + 7 = 10
+```
+
+Each call that is not a base case makes two calls, so one call creates a tree of calls
+rather than a single chain. This example makes 7 calls in total. Every branch of the tree
+must end at a base case, or the recursion never stops.
+
 ---
 
 ## Guided In-Lab Exercises
@@ -243,7 +284,7 @@ File: `lab10_power.c`
 ### Exercise 2: Refactor a Week-7 program (Part B and C)
 
 Take your `lab07_rtriangle.c` (right-aligned triangle) and rewrite it using
-two functions:
+three functions:
 - `void print_spaces(int n)` prints n spaces
 - `void print_stars(int n)` prints n star characters and a newline
 - `void print_triangle(int rows)` calls the above

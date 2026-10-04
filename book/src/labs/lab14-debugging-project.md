@@ -124,7 +124,7 @@ For a structured method to do this, see [Reading and Tracing a Program](../appen
 
 ### Exercise 1: Bug hunt (Part A)
 
-The professor provides `buggy.c`, a program with 3 deliberate bugs (at least one compile-time,
+Download [buggy.c](files/lab14/buggy.c), a program with 3 deliberate bugs (at least one compile-time,
 one logic bug). Your task:
 1. Compile and read the errors.
 2. Use `printf`-tracing to find the logic bug.
@@ -134,7 +134,7 @@ File: submit the corrected `lab14_buggy.c`
 
 ### Exercise 2: Trace the program (Part B)
 
-Given `mystery.c` (provided), predict the output for inputs 5, 10, and 0.
+Given [mystery.c](files/lab14/mystery.c), predict the output for inputs 5, 10, and 0.
 Write your predictions in a comment at the top, then run and compare.
 
 File: `lab14_trace.c` (add your comment block)

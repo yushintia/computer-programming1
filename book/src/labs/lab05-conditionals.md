@@ -290,6 +290,29 @@ File: `lab05_menu.c`
 The professor will provide a short set of questions (5 to 8 problems) covering Weeks 1 to 5.
 Answer individually. Results will be used to adjust upcoming sessions and are not graded for marks.
 
+### Exercise 4: Days in a month (Part C)
+
+Read a month number from 1 to 12 and print how many days that month has in a
+non-leap year: 28 for February, 30 for April, June, September, and November, and 31 for
+the rest. Print "Invalid month." for any other number. Use `switch-case`, and group the
+30-day months with stacked `case` labels instead of writing each one out.
+
+Sample run:
+```
+Enter month (1-12): 9
+Days in month 9: 30
+Enter month (1-12): 2
+Days in month 2: 28
+Enter month (1-12): 13
+Invalid month.
+```
+
+Hint: a `case` with no `break` falls through to the next case. Stacking `case 4:`,
+`case 6:`, `case 9:`, and `case 11:` on consecutive lines, with one `break` at the end,
+uses that behavior on purpose. Add a comment saying so.
+
+File: `lab05_month_days.c`
+
 ---
 
 ## Challenge Problem
@@ -418,8 +441,9 @@ Player 1: 2   Player 2: 2   → It's a tie!
 
 | Deliverable | Filename | Points |
 |-------------|----------|--------|
-| Leap year checker | `lab05_leap.c` | 4 |
-| Menu with switch | `lab05_menu.c` | 6 |
+| Leap year checker | `lab05_leap.c` | 3 |
+| Menu with switch | `lab05_menu.c` | 4 |
+| Days in a month with switch | `lab05_month_days.c` | 3 |
 
 **Total: 10 points**
 

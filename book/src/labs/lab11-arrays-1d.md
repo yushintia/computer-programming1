@@ -138,6 +138,18 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
+### Arrays as Function Parameters
+
+```c
+void print_array(int a[], int n) {  /* array size is lost: pass n separately */
+    for (int i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+}
+```
+
+Always pass the **size** `n` as a separate parameter.
+
 ### Common Operations
 
 ```c
@@ -159,24 +171,12 @@ int search(int a[], int n, int target) {
 }
 ```
 
-### Arrays as Function Parameters
-
-```c
-void print_array(int a[], int n) {  /* array size is lost: pass n separately */
-    for (int i = 0; i < n; i++)
-        printf("%d ", a[i]);
-    printf("\n");
-}
-```
-
-Always pass the **size** `n` as a separate parameter.
-
 > **Under the Hood: contiguous memory**
 >
-> An array is a contiguous block of memory.
-> `a[i]` is equivalent to `*(a + i)`: start of the array plus i times the element size.
-> This is why `a[5]` in a 5-element array reads random memory: the CPU computes
-> `start + 5 x 4 bytes` and fetches whatever bytes happen to be there.
+> An array is a contiguous block of memory. Its elements sit one after another,
+> each the same size, so `a[i]` is the element `i` places after the first one.
+> This is why `a[5]` in a 5-element array reads random memory: the element after the
+> last one is not part of the array, and the CPU does not check whether you asked for it.
 > Out-of-bounds access is a very common source of crashes and security vulnerabilities.
 > The computer does not check; you must.
 
@@ -539,7 +539,7 @@ int main(void) {
 **Expected output:**
 ```
 Sum: 369
-Avg: 46.13
+Avg: 46.12
 Min: 5
 Max: 99
 ```
@@ -556,6 +556,47 @@ void reverse(int a[], int n) {
     }
 }
 ```
+
+### Example 3: Shifting values in place
+
+To move values inside one array, the loop must start at the end. This demo shifts every
+element one position to the right, drops the last value, and puts 0 in the freed first slot.
+
+```c
+/* lab11_shift_demo.c */
+#include <stdio.h>
+
+void shift_right(int a[], int n) {
+    for (int i = n - 1; i > 0; i--) {
+        a[i] = a[i - 1];     /* copy the left neighbour into this slot */
+    }
+    a[0] = 0;                /* the freed first slot gets 0 */
+}
+
+int main(void) {
+    int a[5] = {1, 2, 3, 4, 5};
+    shift_right(a, 5);
+    for (int i = 0; i < 5; i++) printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+```
+
+**Expected output:** `0 1 2 3 4`
+
+| Step | Array |
+|------|-------|
+| start | 1 2 3 4 5 |
+| i = 4: `a[4] = a[3]` | 1 2 3 4 4 |
+| i = 3: `a[3] = a[2]` | 1 2 3 3 4 |
+| i = 2: `a[2] = a[1]` | 1 2 2 3 4 |
+| i = 1: `a[1] = a[0]` | 1 1 2 3 4 |
+| after: `a[0] = 0` | 0 1 2 3 4 |
+
+Going from the end matters. If the loop started at `i = 1` and moved forward, `a[1]` would
+copy `a[0]`, then `a[2]` would copy the already-overwritten `a[1]`, and every value would
+end up as 1. Exercise 3 uses the same idea, with one value saved in a temporary variable
+before the shift.
 
 ---
 
@@ -585,6 +626,23 @@ one position to the left, wrapping the first element to the end.
 For example: `{1, 2, 3, 4, 5}` becomes `{2, 3, 4, 5, 1}`.
 
 File: `lab11_rotate.c`
+
+### Exercise 4: Count values in a range (Part C)
+
+Write `int count_in_range(int a[], int n, int low, int high)` that returns how many
+elements satisfy `low <= a[i] <= high`. In `main`, read 8 integers into an array, read
+`low` and `high`, call the function, and print the count and the matching values on one
+line, in the order they were entered.
+
+Sample run:
+```
+Enter 8 integers: 4 17 9 23 12 30 7 15
+Enter low and high: 8 20
+Count: 4
+Matching values: 17 9 12 15
+```
+
+File: `lab11_range.c`
 
 ---
 
@@ -744,9 +802,10 @@ Locker 115 not found.
 
 | Deliverable | Filename | Points |
 |-------------|----------|--------|
-| Read and summarize | `lab11_stats.c` | 4 |
-| Linear search | `lab11_search.c` | 3 |
+| Read and summarize | `lab11_stats.c` | 2 |
+| Linear search | `lab11_search.c` | 2 |
 | Rotate left | `lab11_rotate.c` | 3 |
+| Count values in a range | `lab11_range.c` | 3 |
 
 **Total: 10 points**
 

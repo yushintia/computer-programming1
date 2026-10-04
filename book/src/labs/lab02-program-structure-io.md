@@ -297,20 +297,20 @@ Rules:
 #include <stdio.h>
 
 int main(void) {
-    printf("===========================\n");
-    printf("  Computer Programming I  \n");
-    printf("  Professor: Y. Pramitar \n");
-    printf("===========================\n");
+    printf("========================================\n");
+    printf("  Computer Programming I\n");
+    printf("  Professor: Yushintia Pramitarini\n");
+    printf("========================================\n");
     return 0;
 }
 ```
 
 Expected output:
 ```
-===========================
-  Computer Programming I  
-  Professor: Y. Pramitar 
-===========================
+========================================
+  Computer Programming I
+  Professor: Yushintia Pramitarini
+========================================
 ```
 
 ### Example 2: Printing numbers and mixing text
@@ -322,7 +322,7 @@ Expected output:
 int main(void) {
     printf("My favourite number is %d\n", 42);
     printf("Pi is approximately %.2f\n", 3.14159);
-    printf("The letter A has ASCII code %d\n", 'A');
+    printf("Twice my number is %d\n", 2 * 42);
     return 0;
 }
 ```
@@ -331,7 +331,7 @@ Expected output:
 ```
 My favourite number is 42
 Pi is approximately 3.14
-The letter A has ASCII code 65
+Twice my number is 84
 ```
 
 > **`%d`** is a *format specifier*: a placeholder that tells `printf` what type of value
@@ -370,6 +370,8 @@ For each case, write a comment at the top of your file recording what the error 
 Write a program that prints a simple ASCII banner of your choice
 (for example, your initials drawn with `*` characters) using `printf`.
 Use at least 5 `printf` calls and at least one escape sequence other than `\n`.
+
+File: `lab02_banner.c`
 
 ---
 

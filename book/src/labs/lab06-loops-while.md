@@ -295,6 +295,26 @@ After the user guesses correctly, print how many guesses it took.
 
 File: `lab06_guess.c`
 
+### Exercise 4: Limited-tries guessing game (Part C)
+
+Write a guessing game with a hard-coded secret of 27 and a limit of 5 guesses.
+Use a `while` loop with a counter, not a `do-while`:
+- After each wrong guess, print "Too low." or "Too high." and how many guesses are left.
+- If the player guesses correctly, print "Correct in N guesses!" and stop.
+- If all 5 guesses are used up, print "Out of guesses. The number was 27."
+
+Sample run:
+```
+Guess (1-100): 50
+Too high. 4 guesses left.
+Guess (1-100): 20
+Too low. 3 guesses left.
+Guess (1-100): 27
+Correct in 3 guesses!
+```
+
+File: `lab06_limited_guess.c`
+
 ---
 
 ## Runtime-Debugging Moment (Part B, ~10 min)
@@ -332,10 +352,10 @@ You will practice systematic debugging in Week 14.
 
 ## Challenge Problem
 
-Write a program that finds and prints all **perfect numbers** up to 1000.
-A perfect number equals the sum of its proper divisors (e.g., 6 = 1 + 2 + 3).
+Read a positive integer and print the sum of its digits using a `while` loop
+(for example, 4527 gives 4 + 5 + 2 + 7 = 18). Do not convert the number to a string.
 
-File: `lab06_perfect.c`
+File: `lab06_challenge_digit_sum.c`
 
 ---
 
@@ -452,9 +472,10 @@ Enter a positive integer: 6   → Steps to reach 1: 8
 
 | Deliverable | Filename | Points |
 |-------------|----------|--------|
-| Sum 1 to N | `lab06_sum.c` | 3 |
+| Sum 1 to N | `lab06_sum.c` | 2 |
 | Input validation | `lab06_validate.c` | 3 |
-| Guessing game | `lab06_guess.c` | 4 |
+| Guessing game | `lab06_guess.c` | 2 |
+| Limited-tries guessing game | `lab06_limited_guess.c` | 3 |
 
 **Total: 10 points**
 

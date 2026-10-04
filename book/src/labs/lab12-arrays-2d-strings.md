@@ -263,6 +263,62 @@ int is_palindrome(const char s[]) {
 "racecar"-> len=7, check 3 pairs, all match -> return 1
 ```
 
+### Example 3: Arrays of strings, `scanf("%s")`, and `toupper`
+
+An array of strings is a 2-D `char` array in which each row holds one string.
+`char fruits[3][10]` holds three words of up to 9 letters each. One byte in each row is
+kept for `'\0'`.
+
+```c
+/* lab12_strings_demo.c */
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void) {
+    char fruits[3][10];
+
+    for (int i = 0; i < 3; i++) {
+        printf("Fruit %d: ", i + 1);
+        scanf("%9s", fruits[i]);            /* %s reads one word and stops at a space */
+    }
+
+    int order = strcmp(fruits[0], fruits[1]);   /* negative, zero, or positive */
+    if (order < 0) {
+        printf("%s comes first\n", fruits[0]);
+    } else if (order > 0) {
+        printf("%s comes first\n", fruits[1]);
+    } else {
+        printf("Same word\n");
+    }
+
+    for (int i = 0; fruits[2][i] != '\0'; i++) {
+        fruits[2][i] = toupper(fruits[2][i]);   /* change one letter at a time */
+    }
+    printf("Third fruit in capitals: %s\n", fruits[2]);
+    return 0;
+}
+```
+
+**Sample run:**
+```
+Fruit 1: pear
+Fruit 2: apple
+Fruit 3: fig
+apple comes first
+Third fruit in capitals: FIG
+```
+
+Three points to notice:
+1. `scanf("%s", ...)` takes a whole word with no spaces and needs no `&`, because the row
+   name already gives the address of its first character. The `9` limits the input to 9
+   characters so it cannot overflow the row.
+2. `strcmp` returns a negative number when its first string comes earlier in dictionary
+   order, zero when the strings are equal, and a positive number when it comes later.
+   Use `strcmp(...) == 0` to test equality, never `==`.
+3. `toupper` (from `<ctype.h>`) takes one `char` and returns its capital form. It leaves
+   non-letters unchanged. Apply it to each character in a loop to change a whole word.
+
 ---
 
 ## Guided In-Lab Exercises
@@ -296,6 +352,28 @@ Print the sorted list.
 
 File: `lab12_names.c`
 
+### Exercise 4: Largest value and diagonal sum (Part C)
+
+Read a 4x4 grid of integers, one row at a time. Print the largest value, along with the
+row and column where it first appears (counting rows and columns from 1). Then print the
+sum of the main diagonal, the cells where the row number equals the column number.
+
+Sample run:
+```
+Enter 16 integers (row by row):
+1 2 3 4
+5 99 7 8
+9 10 11 12
+13 14 15 6
+Largest: 99 at row 2, column 2
+Main diagonal sum: 117
+```
+
+Hint: start with the first cell as the largest, and replace it whenever you read a larger
+value. Add a value to the diagonal sum only when the two indices are equal.
+
+File: `lab12_grid_max.c`
+
 ---
 
 ## Challenge Problem
@@ -325,15 +403,15 @@ Reversed: olleh
 
 ### Practice 2: Letter counter
 
-Write a program that reads a sentence (use `fgets`, up to 99 characters) and a single letter, then counts how many times that letter appears in the sentence, ignoring uppercase/lowercase differences (use `tolower`).
+Write a program that reads a single word (use `scanf("%s")`, as in Example 3) and a single letter, then counts how many times that letter appears in the word, ignoring uppercase/lowercase differences (use `tolower`).
 
 File: `lab12_practice2_letter_count.c`
 
 **Sample run:**
 ```
-Enter a sentence: The quick brown fox
-Enter a letter to count: o
-'o' appears 2 time(s)
+Enter a word: Mississippi
+Enter a letter to count: s
+'s' appears 4 time(s)
 ```
 
 ### Practice 3: Classroom seating chart
@@ -420,7 +498,7 @@ This grid IS a magic square.
 |---------|---------|-----|
 | Not leaving room for `\0` | String functions corrupt memory | Size = characters + 1 |
 | Comparing strings with `==` | Always compares pointer addresses, not content | Use `strcmp(s1, s2) == 0` |
-| `strcpy` into a small buffer | Buffer overflow / crash | Ensure `dst` is large enough; use `strncpy` if unsure |
+| `strcpy` into a small buffer | Buffer overflow / crash | Ensure `dst` is large enough: the length of the text plus one for `'\0'` |
 | Wrong column size in 2-D function param | Compiler error | The innermost dimension must be specified in the parameter |
 
 ---
@@ -429,9 +507,10 @@ This grid IS a magic square.
 
 | Deliverable | Filename | Points |
 |-------------|----------|--------|
-| Matrix operations | `lab12_matrix.c` | 5 |
-| String statistics | `lab12_text.c` | 3 |
+| Matrix operations | `lab12_matrix.c` | 3 |
+| String statistics | `lab12_text.c` | 2 |
 | Name sorter | `lab12_names.c` | 2 |
+| Largest value and diagonal sum | `lab12_grid_max.c` | 3 |
 
 **Total: 10 points**
 

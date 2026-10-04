@@ -170,7 +170,7 @@ END IF
 
 ### Example 1: The provided "first program" (run, do not write yet)
 
-This program will be provided as a file. Read it, then run it:
+This program is provided as a file: [first.c](files/lab01/first.c). Read it, then run it:
 
 ```c
 /* first.c */
@@ -191,6 +191,64 @@ Professor: Yushintia Pramitarini
 
 You do not need to understand every line yet. That is Week 2's job.
 Today, just answer one question: does it compile and run on *your* machine?
+
+### Example 2: Repeat-until in pseudocode
+
+A snack machine sells a snack for 1,000 won. The customer inserts coins one at a time.
+The loop below keeps asking for coins until the total is enough:
+
+```
+SET total = 0
+REPEAT
+    INPUT coin
+    SET total = total + coin
+UNTIL total >= 1000
+OUTPUT total - 1000 AS change
+```
+
+Trace it with three coins: 500, then 300, then 500.
+
+| Pass | coin | total | total >= 1000? | Action |
+|------|------|-------|----------------|--------|
+| 1 | 500 | 500 | no | repeat |
+| 2 | 300 | 800 | no | repeat |
+| 3 | 500 | 1300 | yes | stop |
+
+The machine prints a change of 300 won.
+
+A `REPEAT ... UNTIL` loop checks its condition after the body, so the body always runs at
+least once. A `WHILE` loop checks first. You will see the same difference in C in Week 6.
+
+### Example 3: Flowchart of a pseudocode program
+
+A flowchart draws the same logic as pseudocode, using shapes. This flowchart shows the
+"larger of two numbers" pseudocode from the Background section:
+
+```
+           (Start)
+              |
+              v
+       [INPUT a, b]
+              |
+              v
+          <a > b ?>
+        yes /     \ no
+           v       v
+    [OUTPUT a]   [OUTPUT b]
+           \       /
+            v     v
+             (End)
+```
+
+| Shape | Meaning |
+|-------|---------|
+| Oval `( )` | Start or end of the program |
+| Rectangle `[ ]` | An input, an output, or a step |
+| Diamond `< >` | A question with a yes or no answer |
+| Arrow | The order in which steps happen |
+
+Read the chart from top to bottom. Each diamond has exactly two exits, and only one
+of them runs for a given input.
 
 ---
 
@@ -218,9 +276,11 @@ Your pseudocode should handle:
 
 There is no single correct answer. Talk about your solution with the person next to you.
 
+File: `lab01_pseudo.txt` (or a photo of handwritten pseudocode)
+
 ### Exercise 3: Run the provided program (Part C)
 
-- Open `first.c` (provided by the professor).
+- Download [first.c](files/lab01/first.c) and save it in your working folder.
 - Compile it: `gcc first.c -o first`
 - Run it: `./first`
 - Take a screenshot of the terminal showing the output.

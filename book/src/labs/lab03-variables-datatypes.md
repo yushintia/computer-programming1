@@ -123,6 +123,12 @@ Each type uses a fixed amount of space. That is why you must tell C what type a 
 > Because `char` values are integers, arithmetic works on them:
 > `'A' + 1` equals `66`, which is `'B'`.
 > This is also why `char` is only 1 byte: the 128 (or 256) ASCII codes fit in a single byte.
+>
+> Print a character with `%c`, or print its code with `%d`:
+>
+> ```c
+> printf("%c %d\n", 'A', 'A');   /* prints: A 65 */
+> ```
 
 ---
 
@@ -319,6 +325,40 @@ int main(void) {
 `(double)a` converts the value of `a` to a decimal number before the division happens.
 When C divides a decimal by an integer, it promotes the integer to decimal first,
 so the result is `3.50` instead of `3`.
+
+### Example 3: Swapping with a temporary variable
+
+Two boxes cannot trade contents directly. Copying `y` into `x` destroys the old value
+of `x`, so you need a third box to hold it for a moment.
+
+```c
+/* lab03_swap_demo.c */
+#include <stdio.h>
+
+int main(void) {
+    int x = 5, y = 9;
+    int temp;
+    printf("Before: x=%d, y=%d\n", x, y);
+    temp = x;   /* save x in the third box */
+    x = y;      /* copy y into x; the old x is safe in temp */
+    y = temp;   /* copy the saved value into y */
+    printf("After:  x=%d, y=%d\n", x, y);
+    return 0;
+}
+```
+
+Expected output:
+```
+Before: x=5, y=9
+After:  x=9, y=5
+```
+
+| Step | `x` | `y` | `temp` |
+|------|-----|-----|--------|
+| start | 5 | 9 | (unset) |
+| `temp = x;` | 5 | 9 | 5 |
+| `x = y;` | 9 | 9 | 5 |
+| `y = temp;` | 9 | 5 | 5 |
 
 ---
 

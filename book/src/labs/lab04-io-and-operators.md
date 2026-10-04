@@ -136,6 +136,26 @@ When in doubt: **use parentheses**; they cost nothing and prevent bugs.
 | `/` | Divide | `7 / 2` | `3` (int!), `3.5` (float) |
 | `%` | Modulo (remainder) | `7 % 2` | `1` |
 
+### Increment and Compound Assignment
+
+| Op | Meaning | Example | Same as |
+|----|---------|---------|---------|
+| `++` | Add 1 | `count++;` | `count = count + 1;` |
+| `--` | Subtract 1 | `left--;` | `left = left - 1;` |
+| `+=` | Add to the variable | `sum += 5;` | `sum = sum + 5;` |
+| `-=` | Subtract from the variable | `money -= 500;` | `money = money - 500;` |
+| `*=` | Multiply the variable by | `price *= 2;` | `price = price * 2;` |
+
+```c
+int count = 0;
+count++;       /* count is now 1 */
+count += 5;    /* count is now 6 */
+```
+
+Use these as statements on their own line, as above. The difference between `i++` and `++i`
+matters only inside a larger expression, which you do not need yet. You will use `++` and `+=`
+in loops from Week 6 on.
+
 ### Relational and Logical Operators
 
 | Op | Meaning |
@@ -272,6 +292,30 @@ Then write the program, run it, and check your prediction.
 
 File: `lab04_precedence.c` (include your predicted values in a comment)
 
+### Exercise 4: Score report with percentages (Part C)
+
+Read three quiz scores as integers, each out of 20. Print one row per quiz with the quiz
+number, the score, and the percentage. Then print a total row with the sum of the scores
+and the overall percentage across all three quizzes.
+
+Sample run:
+```
+Enter score for quiz 1 (out of 20): 18
+Enter score for quiz 2 (out of 20): 15
+Enter score for quiz 3 (out of 20): 12
+Quiz   Score   Percent
+1         18     90.0%
+2         15     75.0%
+3         12     60.0%
+Total     45     75.0%
+```
+
+Hints: compute a percentage as `score * 100.0 / 20`. Using `100.0` keeps the division out
+of integer arithmetic, so the decimals survive. Print the `%` sign with `%%`. Align the
+columns with `printf` width specifiers.
+
+File: `lab04_scorereport.c`
+
 ---
 
 ## Challenge Problem
@@ -404,7 +448,6 @@ Is exact hour (minutes == 0): 0
 | Mistake | Symptom | Fix |
 |---------|---------|-----|
 | `int / int` gives unexpected 0 or truncated result | e.g., `1/2` gives `0` | Cast one operand: `(double)a / b` |
-| Confusing `=` (assign) with `==` (compare) | Silent wrong results | `a = 5` sets a; `a == 5` tests a |
 | Forgetting `%%` to print a literal `%` in `printf` | `%` disappears or causes a warning | Use `%%` |
 | Wrong precedence in complex expression | Unexpected result | Add parentheses |
 
@@ -414,8 +457,9 @@ Is exact hour (minutes == 0): 0
 
 | Deliverable | Filename | Points |
 |-------------|----------|--------|
-| Receipt formatter | `lab04_receipt.c` | 5 |
-| Boolean expressions | `lab04_bool.c` | 3 |
+| Receipt formatter | `lab04_receipt.c` | 3 |
+| Score report with percentages | `lab04_scorereport.c` | 3 |
+| Boolean expressions | `lab04_bool.c` | 2 |
 | Precedence puzzle | `lab04_precedence.c` | 2 |
 
 **Total: 10 points**
