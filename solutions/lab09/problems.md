@@ -1,6 +1,6 @@
-# Lab 09: Functions I - Basics - Guided Exercises and Challenge
+# Lab 09: Functions I: Basics
 
-Prompts only, adapted from the lab text. See `answer-key/` for reference solutions.
+Prompts only, adapted from the Lab 09 lab page. Solutions are not distributed with this page.
 
 ## Guided In-Lab Exercises
 
@@ -31,7 +31,7 @@ File: `lab09_validator.c`
 ### Exercise 3: Modular grade printer
 
 Write three functions:
-- `double read_score(const char* label)` prints `label`, reads a double 0 to 100.
+- `double read_score(char label[])` prints `label`, reads a double 0 to 100.
 - `char grade_letter(double score)` returns the letter grade ('A' to 'F').
 - `void print_report(double s1, double s2, double s3)` prints each score with
   its grade and the average.

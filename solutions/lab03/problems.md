@@ -1,4 +1,4 @@
-# Lab 03 — Problems (Guided Exercises & Challenge)
+# Lab 03: Variables, Data Types and Expressions - Problems (Guided Exercises and Challenge)
 
 ## Exercise 1: Temperature converter
 

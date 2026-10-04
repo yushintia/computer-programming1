@@ -1,4 +1,4 @@
-# Lab 08: Midterm — Sample Practice Problems
+# Lab 08: Midterm: Sample Practice Problems
 
 > These are the sample practice problems listed for the midterm exam week
 > (not the actual exam questions, but representative in scope and style).

@@ -1,4 +1,4 @@
-# Lab 04 — Problems (Guided Exercises & Challenge)
+# Lab 04: Input/Output and Operators - Problems (Guided Exercises and Challenge)
 
 ## Exercise 1: Receipt formatter
 
@@ -42,6 +42,14 @@ printf("%d %d %d\n", x, y, z);
 Then write the program, run it, and check your prediction.
 
 File: `lab04_precedence.c` (include your predicted values in a comment)
+
+## Exercise 4: Score report with percentages
+
+Read three quiz scores as integers, each out of 20. Print one row per quiz
+with the quiz number, the score, and the percentage. Then print a total row
+with the sum of the scores and the overall percentage across all three quizzes.
+
+File: `lab04_scorereport.c`
 
 ## Challenge Problem: Won banknote breakdown
 

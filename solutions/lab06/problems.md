@@ -1,4 +1,4 @@
-# Lab 06: Loops I: while and do-while — Problems
+# Lab 06: Loops I: while and do-while
 
 ## Guided In-Lab Exercises
 
@@ -24,12 +24,22 @@ guess. After the user guesses correctly, print how many guesses it took.
 
 File: `lab06_guess.c`
 
+### Exercise 4: Limited-tries guessing game
+
+Write a guessing game with a hard-coded secret of 27 and a limit of 5 guesses.
+Use a `while` loop with a counter, not a `do-while`:
+- After each wrong guess, print "Too low." or "Too high." and how many guesses are left.
+- If the player guesses correctly, print "Correct in N guesses!" and stop.
+- If all 5 guesses are used up, print "Out of guesses. The number was 27."
+
+File: `lab06_limited_guess.c`
+
 ## Challenge Problem
 
-Write a program that finds and prints all **perfect numbers** up to 1000.
-A perfect number equals the sum of its proper divisors (e.g., 6 = 1 + 2 + 3).
+Read a positive integer and print the sum of its digits using a `while` loop
+(for example, 4527 gives 4 + 5 + 2 + 7 = 18). Do not convert the number to a string.
 
-File: `lab06_perfect.c`
+File: `lab06_challenge_digit_sum.c`
 
 ## Practice Problems
 

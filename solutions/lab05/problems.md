@@ -1,4 +1,4 @@
-# Lab 05: Conditional Statements — Problems
+# Lab 05: Conditional Statements
 
 ## Guided In-Lab Exercises
 
@@ -24,6 +24,15 @@ Read the user's choice (1 to 4). For choices 1 to 3, read the necessary dimensio
 and print the area. For 4, print "Goodbye." Use `switch-case`.
 
 File: `lab05_menu.c`
+
+### Exercise 4: Days in a month
+
+Read a month number from 1 to 12 and print how many days that month has in a
+non-leap year: 28 for February, 30 for April, June, September, and November, and 31 for
+the rest. Print "Invalid month." for any other number. Use `switch-case`, and group the
+30-day months with stacked `case` labels instead of writing each one out.
+
+File: `lab05_month_days.c`
 
 ## Challenge Problem
 

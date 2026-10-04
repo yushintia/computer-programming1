@@ -1,4 +1,4 @@
-# Lab 02 — Problems (Guided Exercises & Challenge)
+# Lab 02: Program Structure and Basic I/O - Problems (Guided Exercises and Challenge)
 
 ## Exercise 1: Your name card
 

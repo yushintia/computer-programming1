@@ -1,4 +1,4 @@
-# Lab 07: Loops II: for and Nested Loops — Problems
+# Lab 07: Loops II: for and Nested Loops
 
 ## Guided In-Lab Exercises
 
@@ -39,7 +39,12 @@ Files: `lab07_rev_a.c`, `lab07_rev_b.c`, `lab07_rev_c.c`
 
 ## Challenge Problem
 
-Print a diamond pattern:
+**Challenge A: Perfect numbers.** Write a program that finds and prints all **perfect numbers**
+up to 1000. A perfect number equals the sum of its proper divisors (e.g., 6 = 1 + 2 + 3).
+
+File: `lab07_perfect.c`
+
+**Challenge B: Diamond.** Print a diamond pattern:
 ```
     *
    ***

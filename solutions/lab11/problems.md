@@ -1,6 +1,6 @@
-# Lab 11: Arrays I - One-Dimensional Arrays - Guided Exercises and Challenge
+# Lab 11: Arrays I: One-Dimensional Arrays
 
-Prompts only, adapted from the lab text. See `answer-key/` for reference solutions.
+Prompts only, adapted from the Lab 11 lab page. Solutions are not distributed with this page.
 
 ## Guided In-Lab Exercises
 
@@ -28,6 +28,15 @@ one position to the left, wrapping the first element to the end.
 For example: `{1, 2, 3, 4, 5}` becomes `{2, 3, 4, 5, 1}`.
 
 File: `lab11_rotate.c`
+
+### Exercise 4: Count values in a range
+
+Write `int count_in_range(int a[], int n, int low, int high)` that returns how many
+elements satisfy `low <= a[i] <= high`. In `main`, read 8 integers into an array, read
+`low` and `high`, call the function, and print the count and the matching values on one
+line, in the order they were entered.
+
+File: `lab11_range.c`
 
 ## Challenge Problem
 

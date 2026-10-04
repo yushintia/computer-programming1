@@ -1,4 +1,4 @@
-# Lab 01 — Problems (Guided Exercises & Challenge)
+# Lab 01: Course Introduction and Programming Concepts - Problems (Guided Exercises and Challenge)
 
 Week 1 is orientation: there is **no code submission** this week.
 The deliverables are a toolchain screenshot and pseudocode/flowchart work.

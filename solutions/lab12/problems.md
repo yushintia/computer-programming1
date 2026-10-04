@@ -1,7 +1,7 @@
-# Lab 12: Arrays II (2-D Arrays & Strings) — Problem Set
+# Lab 12: Arrays II: 2-D Arrays and Strings
 
-Adapted from `src/labs/lab12-arrays-2d-strings.md`. These are the problem
-statements only; see `answer-key/` for reference solutions.
+Adapted from the Lab 12 lab page. These are the problem statements only.
+Solutions are not distributed with this page.
 
 ## Guided In-Lab Exercises
 
@@ -34,6 +34,14 @@ Print the sorted list.
 
 File: `lab12_names.c`
 
+### Exercise 4: Largest value and diagonal sum
+
+Read a 4x4 grid of integers, one row at a time. Print the largest value, along with the
+row and column where it first appears (counting rows and columns from 1). Then print the
+sum of the main diagonal, the cells where the row number equals the column number.
+
+File: `lab12_grid_max.c`
+
 ## Challenge Problem
 
 Write a function `void transpose(int m[][N], int n)` that transposes a square
@@ -59,15 +67,15 @@ Reversed: olleh
 
 ### Practice 2: Letter counter
 
-Write a program that reads a sentence (use `fgets`, up to 99 characters) and a single letter, then counts how many times that letter appears in the sentence, ignoring uppercase/lowercase differences (use `tolower`).
+Write a program that reads a single word (use `scanf("%s")`, as in Example 3) and a single letter, then counts how many times that letter appears in the word, ignoring uppercase/lowercase differences (use `tolower`).
 
 File: `lab12_practice2_letter_count.c`
 
 **Sample run:**
 ```
-Enter a sentence: The quick brown fox
-Enter a letter to count: o
-'o' appears 2 time(s)
+Enter a word: Mississippi
+Enter a letter to count: s
+'s' appears 4 time(s)
 ```
 
 ### Practice 3: Classroom seating chart

@@ -1,7 +1,7 @@
-# Lab 13: Basic Data Structures — Problem Set
+# Lab 13: Basic Data Structures
 
-Adapted from `src/labs/lab13-data-structures.md`. These are the problem
-statements only; see `answer-key/` for reference solutions.
+Adapted from the Lab 13 lab page. These are the problem statements only.
+Solutions are not distributed with this page.
 
 ## Guided In-Lab Exercises
 
@@ -15,12 +15,24 @@ File: `lab13_contacts.c`
 
 ### Exercise 2: Records program
 
-Implement the Student roster from the worked example (an `id`, `name`, and
-`score` per student, read into an array of structs, printed as a formatted
-table, with a function that finds the top-scoring student).
+Implement the Student roster from the worked example.
 Add a function that computes the class average score.
 
 File: `lab13_records.c`
+
+### Exercise 3: Course grade book
+
+Define a `typedef struct` named `Course` with a `char name[20]`, an `int credits`, and a
+`double grade_points` (for example 4.0 for an A, or 3.5 for a B+). Read 4 courses into an
+array, then write:
+- `double weighted_gpa(Course c[], int n)`: returns the sum of `credits * grade_points`
+  divided by the total credits.
+- `Course most_credits(Course c[], int n)`: returns a copy of the course with the most credits.
+
+Print the weighted GPA with 2 decimal places, then print the name and credits of the course
+returned by `most_credits`.
+
+File: `lab13_gradebook.c`
 
 ## Challenge Problem
 

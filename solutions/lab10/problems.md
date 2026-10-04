@@ -1,6 +1,6 @@
-# Lab 10: Functions II - Scope & Recursion - Guided Exercises and Challenge
+# Lab 10: Functions II: Scope and Recursion
 
-Prompts only, adapted from the lab text. See `answer-key/` for reference solutions.
+Prompts only, adapted from the Lab 10 lab page. Solutions are not distributed with this page.
 
 ## Guided In-Lab Exercises
 
