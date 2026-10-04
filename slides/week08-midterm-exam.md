@@ -83,7 +83,7 @@ operators, conditionals, and loops. No new material.
 # Exam Rules & Submission
 
 <div class="cardlist">
-<div class="card"><div class="h">Open-book</div><div class="d">Your compiler, printed reference sheets, and course lab pages are allowed</div></div>
+<div class="card"><div class="h">Open-book</div><div class="d">Your compiler and your own printed reference sheets only</div></div>
 <div class="card"><div class="h">Restricted network</div><div class="d">No internet browsing, no messaging, no AI tools</div></div>
 <div class="card"><div class="h">Work independently</div><div class="d">Invigilated; talking to classmates is not permitted</div></div>
 <div class="card"><div class="h">Partial credit per task</div><div class="d">Each task graded separately - 3 of 4 correct still earns 75%</div></div>
@@ -201,7 +201,10 @@ while (x != 0) {
     scanf("%d", &x);
 }
 printf("Positive: %d, Negative: %d\n", pos, neg);
-printf("Average: %.2f\n", count > 0 ? (double)sum / count : 0.0);
+if (count > 0)
+    printf("Average: %.2f\n", (double)sum / count);
+else
+    printf("Average: 0.00\n");
 ```
 
 A `while` loop, since you don't know the count in advance.
@@ -276,7 +279,7 @@ one long `main`.
   (compiler and your own reference sheets only), restricted network.
 - 3-5 independent tasks, submitted as separate `.c` files
   (`m1.c`, `m2.c`, ...). A non-compiling file earns almost nothing.
-- **Lab page:** `lab08-midterm-exam.md` for the full rubric and more
+- **Lab page:** [Lab 08: Midterm: Live In-Lab Coding](../book/labs/lab08-midterm-exam.html) for the full rubric and more
   practice problems.
 - **Prepare:** review loops, conditionals, and I/O patterns from
   Weeks 1-7; bring your printed reference sheet.

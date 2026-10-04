@@ -67,9 +67,9 @@ correct calculations.
 <div class="pain">
 
 You write a program to split a 7,000-won snack bill between 2 friends.
-It answers "3,500 each" - reasonable. Now try splitting 7,000 won
-between 2 friends where the answer should include change: your program
-quietly says each pays 3,000, and the leftover 1,000 just disappears.
+It answers "3,500 each" - reasonable. Now try splitting the same
+7,000 won between 3 friends: your program quietly says each pays
+2,333, and the 1 won left over just disappears.
 
 At the same time, your receipt line-items refuse to line up: item
 names, quantities, and prices sit at random distances from each other,
@@ -112,11 +112,11 @@ is a routine interview and code-review question.
 
 # By the End of This Week, You Can
 
-1. Format `printf` output using width, precision, and alignment
-   specifiers.
+1. Format output with a chosen width, number of decimal places, and
+   alignment.
 2. Use arithmetic, relational, and logical operators correctly.
-3. Predict the result of a mixed-type expression and apply explicit
-   casts.
+3. Predict the result of an expression that mixes whole and decimal
+   numbers, and apply explicit type conversion when needed.
 4. Explain operator precedence and use parentheses to override it.
 
 ---
@@ -199,6 +199,8 @@ the decimal point; extra digits are cut, the stored value is unchanged.
 | `*` | Multiply | `3 * 4` | `12` |
 | `/` | Divide | `7 / 2` | `3` (int!), `3.5` (float) |
 | `%` | Modulo (remainder) | `7 % 2` | `1` |
+| `++` | Add 1 | `count++` | `count` goes up by 1 |
+| `+=` | Add to itself | `total += 5` | same as `total = total + 5` |
 
 `%` gives the *remainder* after division, not the quotient - `7 % 2`
 is `1`, because `7 = 3x2 + 1`.
@@ -218,23 +220,25 @@ values. Logical operators (`&&` AND, `||` OR, `!` NOT) combine
 true/false results. Every one of these returns `1` (true) or `0`
 (false) - you will use them heavily starting next week.
 
+For example, `5 > 3` gives `1` (true), and `2 == 3` gives `0` (false).
+
 ---
 
 <!-- SLOT 14: Mechanics - precedence pyramid -->
 
 # Operator Precedence, Highest to Lowest
 
-<div class="pipeline">
-<div class="stage"><div class="h">( )</div><div class="s">highest</div></div>
-<div class="arrow">&gt;</div>
-<div class="stage"><div class="h">! unary -</div><div class="s">negate / not</div></div>
-<div class="arrow">&gt;</div>
-<div class="stage"><div class="h">* / %</div><div class="s">mult, div, mod</div></div>
-<div class="arrow">&gt;</div>
-<div class="stage"><div class="h">+ -</div><div class="s">add, subtract</div></div>
-<div class="arrow">&gt;</div>
-<div class="stage"><div class="h">&lt; &gt; &amp;&amp; ||</div><div class="s">compare, lowest</div></div>
-</div>
+| Level | Operators | Meaning | Grouping |
+|-------|-----------|---------|----------|
+| 1 (highest) | `( )` | parentheses | - |
+| 2 | `!` `-` (unary) `++` `--` `(type)` | not, negate, increment, cast | right to left |
+| 3 | `*` `/` `%` | multiply, divide, remainder | left to right |
+| 4 | `+` `-` | add, subtract | left to right |
+| 5 | `<` `<=` `>` `>=` | less / greater (or equal) | left to right |
+| 6 | `==` `!=` | equal, not equal | left to right |
+| 7 | `&&` | logical AND | left to right |
+| 8 | `||` | logical OR | left to right |
+| 9 (lowest) | `=` `+=` | assign | right to left |
 
 Same-rank operators evaluate left to right: `10 - 3 - 2` is
 `(10 - 3) - 2 = 5`, not `10 - (3 - 2) = 9`. When in doubt, use
@@ -330,27 +334,47 @@ to `double` keeps the full decimal answer, `2.5`.
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. What does `2 + 3 * 4 - 1` evaluate to, and why?
-2. `int x = 5, y = 2;` - what does `x / y` give, and how do you get
-   `2.5` instead?
-3. Why does `printf("100%\n");` not print `100%` correctly, and what
-   is the fix?
+**Question:** What does `2 + 3 * 4 - 1` evaluate to, and why?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. `13`: `*` (level 3) runs before `+`/`-` (level 4), so `3 * 4 = 12`
-   first, then `2 + 12 - 1 = 13` left to right.
-2. `2` (integer division truncates); cast one operand:
-   `(double)x / y` gives `2.5`.
-3. A lone `%` starts a format specifier, and `\n` after it is not a
-   valid conversion letter, so it prints garbage or gets flagged by
-   the compiler; write `%%` to print a literal `%`.
+**Answer:** `13`: `*` (level 3) runs before `+`/`-` (level 4), so `3 * 4 = 12`
+first, then `2 + 12 - 1 = 13` left to right.
+
+---
+
+# Sample Question 2
+
+**Question:** `int x = 5, y = 2;` - what does `x / y` give, and how do you get
+`2.5` instead?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** `2` (integer division truncates); cast one operand:
+`(double)x / y` gives `2.5`.
+
+---
+
+# Sample Question 3
+
+**Question:** Why does `printf("100%\n");` not print `100%` correctly, and what
+is the fix?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** A lone `%` starts a format specifier, and `\n` after it is not a
+valid conversion letter, so it prints garbage or gets flagged by
+the compiler; write `%%` to print a literal `%`.
 
 ---
 
@@ -385,7 +409,7 @@ Conditional Statements - `if`, `else`, and `switch`.
   precedence decides which one runs first in a mixed expression.
 - Integer division truncates; cast with `(double)` to keep the decimal
   part.
-- **Lab page:** `book/src/labs/lab04-io-and-operators.md` for the
+- **Lab page:** [Lab 04: Input/Output & Operators](../book/labs/lab04-io-and-operators.html) for the
   receipt formatter, boolean-expression, and precedence-puzzle
   exercises.
 - **Prepare:** review `&&`, `||`, and `!` before class - Week 5 builds

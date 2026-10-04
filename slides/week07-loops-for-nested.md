@@ -72,9 +72,10 @@ columns of related items, where you need to visit every single
 position. Or picture printing a multiplication table, five rows by
 five columns.
 
-You already know how to repeat something with `while`, but every
-single time you want to count "from 1 to n," you write three separate
-lines: set the counter, check the counter, update the counter. For a
+You already know how to make a program repeat a step until something
+changes, but every single time you want to count "from 1 to n," you
+write three separate pieces of setup: a starting number, a stopping
+test, and a step that moves the number forward. For a
 grid, you need to do that twice - once for rows, once for columns
 inside each row - and it is easy to forget one piece.
 
@@ -115,12 +116,13 @@ all things you will meet very soon.
 
 # By the End of This Week, You Can
 
-1. Write `for` loops and explain why they are preferred when the
-   iteration count is known.
+1. Write a counting loop that keeps its start, test, and step together,
+   and explain when it fits better than the other loop type (when the
+   number of repeats is known in advance).
 2. Write nested loops to generate 2-D output (multiplication tables,
    patterns).
-3. Use `break` to exit a loop early and `continue` to skip to the next
-   iteration.
+3. Exit a loop early, and skip to the next pass of a loop, from inside
+   the loop body.
 4. Solve problems using a combination of loops and conditionals.
 
 ---
@@ -347,30 +349,50 @@ one more star than the row before it.
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. You need to print a right-aligned triangle, with spaces on the
-   left so every row lines up on the right edge. How many nested
-   loops do you need, and what does each one control?
-2. Trace `for (int i = 1; i <= 3; i++) { for (int j = 1; j <= 2; j++)
-   printf("*"); }`. How many stars print in total?
-3. Inside a nested loop, you want to skip printing when a cell is on
-   the border but keep looping. Do you use `break` or `continue`?
+**Question:** You need to print a right-aligned triangle, with spaces on the
+left so every row lines up on the right edge. How many nested
+loops do you need, and what does each one control?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. Three: one for the row, one for the leading spaces (counts down as
-   the row number goes up), one for the stars (counts up to the row
-   number). Or two loops if spaces and stars are combined cleverly -
-   but the leading-space count still depends on the row.
-2. 6 stars: the outer loop runs 3 times, and for each one the inner
-   loop prints 2 stars (3 x 2 = 6).
-3. `continue` - you want to skip just that one cell and keep the loop
-   running, not stop the whole loop.
+**Answer:** Three: one for the row, one for the leading spaces (counts down as
+the row number goes up), one for the stars (counts up to the row
+number). Or two loops if spaces and stars are combined cleverly -
+but the leading-space count still depends on the row.
+
+---
+
+# Sample Question 2
+
+**Question:** Trace `for (int i = 1; i <= 3; i++) { for (int j = 1; j <= 2; j++)
+printf("*"); }`. How many stars print in total?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** 6 stars: the outer loop runs 3 times, and for each one the inner
+loop prints 2 stars (3 x 2 = 6).
+
+---
+
+# Sample Question 3
+
+**Question:** Inside a nested loop, you want to skip printing when a cell is on
+the border but keep looping. Do you use `break` or `continue`?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** `continue` - you want to skip just that one cell and keep the loop
+running, not stop the whole loop.
 
 ---
 
@@ -409,7 +431,7 @@ Afterward, **Week 9** addresses the reuse gap: Functions I.
   completely before the outer loop advances one step.
 - `break` exits the innermost loop immediately; `continue` skips just
   the current pass.
-- **Lab page:** `book/src/labs/lab07-loops-for-nested.md` for the
+- **Lab page:** [Lab 07: Loops II: for and Nested Loops](../book/labs/lab07-loops-for-nested.html) for the
   triangle, hollow rectangle, and pre-midterm review problems.
 - **Prepare:** the midterm (Week 8) covers Weeks 1-7, live in-lab
   coding - practice the Part C review problems (largest/smallest,

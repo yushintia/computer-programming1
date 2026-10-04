@@ -111,12 +111,13 @@ tested basic skills in technical interviews.
 
 # By the End of This Week, You Can
 
-1. Write `if`, `if-else`, and nested `if` statements to branch program
-   flow.
-2. Combine conditions with `&&`, `||`, and `!`.
-3. Write a `switch-case` statement and know when to prefer it over
-   `if-else`.
-4. Identify the `=` vs `==` bug and explain why it is dangerous.
+1. Write conditional branches (one-way, two-way, and nested) to
+   choose the program's path.
+2. Combine true/false conditions with AND, OR, and NOT.
+3. Write a multi-way choice on one value and know when it fits better
+   than a chain of two-way checks.
+4. Identify the assign-versus-compare bug and explain why it is
+   dangerous.
 
 ---
 
@@ -373,31 +374,51 @@ C. Many compilers warn about <code>if (x = 5)</code> with
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. A year is a leap year if divisible by 4, except years divisible by
-   100 (which are NOT), except years divisible by 400 (which ARE).
-   What kind of `if` structure do you need to express three rules like
-   this, where later rules override earlier ones?
-2. Your `switch` menu program has cases 1 to 4. What line do you add
-   so that typing 9 does not silently do nothing?
-3. What is wrong with `if (x = 5) { ... }`, and what should it say
-   instead?
+**Question:** A year is a leap year if divisible by 4, except years divisible by
+100 (which are NOT), except years divisible by 400 (which ARE).
+What kind of `if` structure do you need to express three rules like
+this, where later rules override earlier ones?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. Nested `if` (or an `if-else if` chain with `&&`): check divisible
-   by 400 first (leap), else divisible by 100 (not leap), else
-   divisible by 4 (leap), else not leap - order matters because later
-   checks only run when earlier ones were false.
-2. A `default:` case, so any unmatched choice gets a clear response
-   instead of silence.
-3. It assigns 5 to `x` and the condition is always true, instead of
-   comparing. It should say `if (x == 5)`.
+**Answer:** Nested `if` (or an `if-else if` chain with `&&`): check divisible
+by 400 first (leap), else divisible by 100 (not leap), else
+divisible by 4 (leap), else not leap - order matters because later
+checks only run when earlier ones were false.
+
+---
+
+# Sample Question 2
+
+**Question:** Your `switch` menu program has cases 1 to 4. What line do you add
+so that typing 9 does not silently do nothing?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** A `default:` case, so any unmatched choice gets a clear response
+instead of silence.
+
+---
+
+# Sample Question 3
+
+**Question:** What is wrong with `if (x = 5) { ... }`, and what should it say
+instead?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** It assigns 5 to `x` and the condition is always true, instead of
+comparing. It should say `if (x == 5)`.
 
 ---
 
@@ -432,7 +453,7 @@ any repeated task still needs the same lines pasted over and over.
   cleaner choice when branching on one integer or char value.
 - `&&`, `||`, `!` combine conditions; always use `==` to compare,
   never `=`.
-- **Lab page:** `book/src/labs/lab05-conditionals.md` for the leap
+- **Lab page:** [Lab 05: Conditional Statements](../book/labs/lab05-conditionals.html) for the leap
   year checker, the switch menu, and the challenge problem.
 - **Prepare:** Part B includes a short, ungraded diagnostic covering
   Weeks 1-5 - just a check-in, not a test. No need to study specially,

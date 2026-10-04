@@ -303,7 +303,7 @@ enough for it to still matter for the next assignment.
 - **The project:** strictly individual - you must be able to explain
   every line at your Week 15 oral defense
 - **Midterm:** closed collaboration, restricted network access,
-  open-book (compiler and your own reference sheets allowed)
+  open-book (compiler and your own reference sheets only)
 - **When in doubt, ask before submitting** - it is always better to
   ask than to guess wrong
 
@@ -388,7 +388,7 @@ unsolved. **Week 2** addresses it: Program Structure &amp; Basic I/O.
   30%, Final 30%.
 - **Textbook:** K. N. King, *C Programming: A Modern Approach*, 2nd ed.
 - **Prepare:** install your C toolchain before Week 2 - see the lab
-  manual's Setup section (`book/src/setup/toolchain.md`).
+  manual's [Setup section](../book/setup/toolchain.html).
 
 ---
 

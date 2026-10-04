@@ -212,7 +212,7 @@ structures. From here:
 - Final: 150 minutes, individual oral defense, 30% of your grade,
   assesses Weeks 9-14 through your own project.
 - Three parts: live demo, explain-your-code Q&A, live modification.
-- **Lab page:** `lab15-final-exam.md` for the full rubric and scoring
+- **Lab page:** [Lab 15: Final: Project Demo + Individual Oral Defense](../book/labs/lab15-final-exam.html) for the full rubric and scoring
   guide.
 - **Prepare:** know every line of your project; practice explaining it
   out loud; review the Debugging Tips appendix.

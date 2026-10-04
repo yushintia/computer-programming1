@@ -112,15 +112,16 @@ program displays, you can't debug it either.
 
 # By the End of This Week, You Can
 
-1. Identify the parts of a minimal C program: preprocessor directive,
-   `main`, statements, and `return`.
-2. Use `printf` to print text, numbers, and escape sequences (`\n`,
-   `\t`).
-3. Compile a program with `gcc` and read the first error message when
-   it fails.
-4. Read a C program's layout - comments, string literals, and
-   indentation - and explain that this is for human readers, not the
-   compiler.
+1. Identify the parts of a minimal program: the header line that
+   brings in input/output tools, the main function (the starting
+   point), statements, and the value handed back at the end.
+2. Print text, numbers, and special characters (line breaks, tabs)
+   as formatted output.
+3. Compile a program with a C compiler and read the first error
+   message when it fails.
+4. Read a program's layout - human-only notes, quoted text, and
+   spacing - and explain that the compiler ignores the notes and
+   spacing, and only human readers benefit from them.
 
 ---
 
@@ -353,10 +354,10 @@ before `return`**.
 #include <stdio.h>
 
 int main(void) {
-    printf("===========================\n");
-    printf("  Computer Programming I  \n");
-    printf("  Professor: Y. Pramitar \n");
-    printf("===========================\n");
+    printf("=====================================\n");
+    printf("  Computer Programming I             \n");
+    printf("  Professor: Yushintia Pramitarini   \n");
+    printf("=====================================\n");
     return 0;
 }
 ```
@@ -375,7 +376,7 @@ one line at a time.
 int main(void) {
     printf("My favourite number is %d\n", 42);
     printf("Pi is approximately %.2f\n", 3.14159);
-    printf("The letter A has ASCII code %d\n", 'A');
+    printf("Score: %d out of %d\n", 9, 10);
     return 0;
 }
 ```
@@ -399,30 +400,50 @@ after the point." Week 4 covers all the options in detail.
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. You delete the `#include <stdio.h>` line and compile. What kind of
-   error or warning would you expect, and why?
-2. You rename `main` to `Main`. Does the program still run? Why or
-   why not?
-3. What is the difference between what the compiler sees in an
-   indented program versus an unindented one - and who actually
-   benefits from indentation?
+**Question:** You delete the `#include <stdio.h>` line and compile. What kind of
+error or warning would you expect, and why?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. A warning or error about `printf` being undeclared (or a link
-   error) - the standard I/O library was never brought in, so the
-   compiler doesn't know what `printf` is.
-2. No - `main` (all lowercase) is the only name C recognizes as the
-   entry point. `Main` is just an unused, unrelated function.
-3. Nothing - the compiler ignores whitespace completely; both
-   versions are identical to it. Only the human reader benefits from
-   indentation.
+**Answer:** A warning or error about `printf` being undeclared (or a link
+error) - the standard I/O library was never brought in, so the
+compiler doesn't know what `printf` is.
+
+---
+
+# Sample Question 2
+
+**Question:** You rename `main` to `Main`. Does the program still run? Why or
+why not?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** No - `main` (all lowercase) is the only name C recognizes as the
+entry point. `Main` is just an unused, unrelated function.
+
+---
+
+# Sample Question 3
+
+**Question:** What is the difference between what the compiler sees in an
+indented program versus an unindented one - and who actually
+benefits from indentation?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** Nothing - the compiler ignores whitespace completely; both
+versions are identical to it. Only the human reader benefits from
+indentation.
 
 ---
 
@@ -457,7 +478,7 @@ unsolved. **Week 3** addresses it: Variables, Data Types & Expressions
   `%.2f`), and escape sequences like `\n` and `\t`.
 - `gcc file.c -o file -Wall` compiles; read the first error's line
   number first, fix it, then recompile.
-- **Lab page:** `book/src/labs/lab02-program-structure-io.md` for the
+- **Lab page:** [Lab 02: Program Structure & Basic I/O](../book/labs/lab02-program-structure-io.html) for the
   name-card exercise, the deliberate-error exercise, and the challenge
   problem.
 - **Prepare:** make sure your toolchain from Week 1 still compiles and

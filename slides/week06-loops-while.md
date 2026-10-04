@@ -110,11 +110,13 @@ least one loop. Not knowing how to write one is not an option.
 
 # By the End of This Week, You Can
 
-1. Write `while` and `do-while` loops with correct init/condition/
-   update structure.
+1. Write both kinds of loop, one that checks its condition before each
+   pass and one that checks after, with setup, condition, and update in
+   the right places.
 2. Use loops for counting and accumulation.
 3. Read input until a sentinel value (e.g., -1 to stop).
-4. Diagnose a misbehaving loop using `printf`-tracing.
+4. Diagnose a misbehaving loop by printing its variables as it runs
+   (tracing).
 
 ---
 
@@ -417,32 +419,52 @@ and practice more systematic debugging in Week 14.
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. You need to keep asking the user for a grade percentage (0-100)
-   until they type a valid value, then print the letter grade. Should
-   you use `while` or `do-while`? Why?
-2. Trace this loop by hand: `int i = 0, sum = 0; while (i <= 3) { sum
-   += i; i++; }`. What is `sum` when the loop ends?
-3. In the sentinel-value pattern, why do we call `scanf` twice - once
-   before the loop and once inside it?
+**Question:** You need to keep asking the user for a grade percentage (0-100)
+until they type a valid value, then print the letter grade. Should
+you use `while` or `do-while`? Why?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. `do-while` - you must ask at least once before you have anything
-   to validate, and the loop should keep repeating as long as the
-   value is invalid.
-2. `sum = 6` (0+1+2+3), after `i` becomes 4 and the condition `i <= 3`
-   becomes false.
-3. The first `scanf` (before the loop) gets the value the `while`
-   condition needs to check for the very first time. The second
-   `scanf` (inside the loop) reads the next value before the
-   condition is checked again - otherwise the loop would test the
-   same old value forever.
+**Answer:** `do-while` - you must ask at least once before you have anything
+to validate, and the loop should keep repeating as long as the
+value is invalid.
+
+---
+
+# Sample Question 2
+
+**Question:** Trace this loop by hand: `int i = 0, sum = 0; while (i <= 3) { sum
++= i; i++; }`. What is `sum` when the loop ends?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** `sum = 6` (0+1+2+3), after `i` becomes 4 and the condition `i <= 3`
+becomes false.
+
+---
+
+# Sample Question 3
+
+**Question:** In the sentinel-value pattern, why do we call `scanf` twice - once
+before the loop and once inside it?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** The first `scanf` (before the loop) gets the value the `while`
+condition needs to check for the very first time. The second
+`scanf` (inside the loop) reads the next value before the
+condition is checked again - otherwise the loop would test the
+same old value forever.
 
 ---
 
@@ -481,7 +503,7 @@ but counting still takes separate init/condition/update lines. **Week
   sentinel value.
 - `printf`-tracing is your first debugging tool: print variable values
   inside the loop to see what is really happening.
-- **Lab page:** `book/src/labs/lab06-loops-while.md` for the sum-to-N,
+- **Lab page:** [Lab 06: Loops I: while and do-while](../book/labs/lab06-loops-while.html) for the sum-to-N,
   input validation, and guessing-game exercises.
 - **Prepare:** review the sum-1-to-N pattern before next week - Week 7
   rewrites it with a `for` loop.

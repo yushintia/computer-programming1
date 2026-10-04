@@ -116,8 +116,10 @@ reusable code" as a baseline expectation, not a bonus skill.
 
 # By the End of This Week, You Can
 
-1. Define a function with a return type, parameter list, and body.
-2. Declare a function prototype before `main` and define it after.
+1. Define a function: its name, the inputs it takes, the result it
+   hands back, and the steps it runs.
+2. Declare a function before the code that calls it, and define it
+   separately (a declaration, then a definition).
 3. Call a function and use its return value.
 4. Explain why breaking code into functions makes programs easier to
    write, test, and read.
@@ -316,28 +318,48 @@ int is_prime(int n) {
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. What is the difference between a function **prototype** and a
-   function **definition**?
-2. Write a function `int square(int n)` that returns `n * n`, then
-   show how you would call it inside a `printf`.
-3. Why can't a single function return two different values at once?
+**Question:** What is the difference between a function **prototype** and a
+function **definition**?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. A prototype is just the header plus a semicolon, placed before
-   `main`, so the compiler knows the function exists. The definition
-   is the full header plus the `{ ... }` body, with the actual logic.
-2. `int square(int n) { return n * n; }`, called as
-   `printf("%d\n", square(5));`
-3. A `return` statement can only send back one value. To change or
-   report more than one value, you need pointers (Week 13) or you
-   restructure the design (e.g., use a `struct`, later this course).
+**Answer:** A prototype is just the header plus a semicolon, placed before
+`main`, so the compiler knows the function exists. The definition
+is the full header plus the `{ ... }` body, with the actual logic.
+
+---
+
+# Sample Question 2
+
+**Question:** Write a function `int square(int n)` that returns `n * n`, then
+show how you would call it inside a `printf`.
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** `int square(int n) { return n * n; }`, called as
+`printf("%d\n", square(5));`
+
+---
+
+# Sample Question 3
+
+**Question:** Why can't a single function return two different values at once?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** A `return` statement can only send back one value. To change or
+report more than one value, you need pointers (Week 13) or you
+restructure the design (e.g., use a `struct`, later this course).
 
 ---
 
@@ -370,7 +392,7 @@ Scope & Recursion.
   declared with a prototype, called by name, defined once.
 - Arguments are copied into parameters; a function can return exactly
   one value, or none (`void`).
-- **Lab page:** `lab09-functions-basics.md` for the guided mini-library
+- **Lab page:** [Lab 09: Functions I: Basics](../book/labs/lab09-functions-basics.html) for the guided mini-library
   lab and the independent exercises.
 - **Prepare:** review today's `max`/`is_prime` example before Week 10 -
   next week asks *why* changing a parameter never affects the caller.

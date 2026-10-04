@@ -72,7 +72,7 @@ of breaking the rule.
 | 10..N-3 | Mechanics | Stepwise, as many slides as the topic needs — draw on the lab's "In plain words" boxes and SVG figure descriptions |
 | N-2 | Worked example | That week's lab's own worked example, with full line-by-line explanation where the lab provides one |
 | N-1 | Common mistakes | The lab's own Common Pitfalls table, restated as slides |
-| N | Check yourself | 2–3 questions; put the answers on the slide immediately after, not the same slide |
+| N | Sample question(s) | 2–3 worked questions, the same reasoning shape a real quiz question takes, taught through rather than quizzed. Each is two consecutive slides: `Sample Question <n>` (the question) then `Sample Question <n>: Answer` (the answer immediately after), so the instructor can pause on the question during class before revealing the answer |
 
 ### Act 4: CLOSE
 

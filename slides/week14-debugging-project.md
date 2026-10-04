@@ -118,10 +118,11 @@ separates a confident answer from a guess.
 
 1. Apply a systematic debugging process: reproduce → isolate →
    identify → fix → verify.
-2. Use `printf`-tracing and the rubber-duck method to find a bug.
-3. Use `gdb` to set a breakpoint, step through code, and inspect a
-   variable.
-4. Read and trace an unfamiliar C program and predict its output.
+2. Use tracing (printing variable values as the program runs) and the
+   rubber-duck method to find a bug.
+3. Use a debugger to pause a program, step through it line by line,
+   and inspect a variable's value.
+4. Read and trace an unfamiliar program and predict its output.
 5. Submit your individual project (artifact + README).
 
 ---
@@ -153,6 +154,27 @@ thing that fixes it, then check the fix didn't just patch one symptom.
 3. **Identify** - understand *why* it goes wrong.
 4. **Fix** - make the smallest change that corrects it.
 5. **Verify** - test the original case *and* a few others.
+
+---
+
+<!-- SLOT 9: Core concept - one bug walked through the five steps -->
+
+# Systematic Debugging: One Bug, Five Steps
+
+A program should print the average of three scores, but `3, 4, 6`
+prints `4` instead of `4.33`.
+
+1. **Reproduce:** enter `3`, `4`, `6` again. It prints `4` every time,
+   so the bug is repeatable.
+2. **Isolate:** print `total` and `count` just before the average line.
+   They show `13` and `3`, which are correct, so the bug is in the
+   division line.
+3. **Identify:** both values are whole numbers, so C divides them as
+   whole numbers and drops the `.33`.
+4. **Fix:** make one value a decimal, such as `13.0 / count`. Change
+   nothing else.
+5. **Verify:** run `3, 4, 6` (now `4.33`), then `10, 10` (`10.00`), and
+   a single score `5` (`5.00`).
 
 ---
 
@@ -222,7 +244,7 @@ predicting what it does, before you run it:
 - Only after you have a predicted output do you run the program - if
   the real output disagrees with your trace, your trace (your
   understanding), not just the code, has a bug.
-- See [Reading and Tracing a Program](../book/src/appendix/tracing-a-program.md)
+- See [Reading and Tracing a Program](../book/appendix/tracing-a-program.html)
   for the full trace-table method.
 
 ---
@@ -268,25 +290,45 @@ int main(void) {
 
 ---
 
-<!-- SLOT 16: Check yourself -->
+<!-- SLOT 16: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. What are the five steps of systematic debugging, in order?
-2. Why must you `printf`-trace *before* changing the suspect line, not
-   after?
-3. In the `mystery(n)` example, what would change if the condition
-   were `i % 2 == 0` instead of `!= 0`?
+**Question:** What are the five steps of systematic debugging, in order?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. Reproduce → isolate → identify → fix → verify.
-2. Tracing before changing anything tells you *where* the value first
-   goes wrong (isolate) - change first and you've lost that evidence.
-3. It would sum the *even* numbers 1..n instead of the odd ones (for
-   `n=7`: 2+4+6 = 12 instead of 16).
+**Answer:** Reproduce → isolate → identify → fix → verify.
+
+---
+
+# Sample Question 2
+
+**Question:** Why must you `printf`-trace *before* changing the suspect line, not
+after?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** Tracing before changing anything tells you *where* the value first
+goes wrong (isolate) - change first and you've lost that evidence.
+
+---
+
+# Sample Question 3
+
+**Question:** In the `mystery(n)` example, what would change if the condition
+were `i % 2 == 0` instead of `!= 0`?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** It would sum the *even* numbers 1..n instead of the odd ones (for
+`n=7`: 2+4+6 = 12 instead of 16).
 
 ---
 
@@ -325,7 +367,7 @@ defense.
   most logic bugs; `gdb`'s five commands (`break`, `run`, `next`,
   `print`, `quit`) go deeper when needed.
 - Reading unfamiliar code means tracing by hand *before* running it.
-- **Lab page:** `book/src/labs/lab14-debugging-project.md`, for the bug
+- **Lab page:** [Lab 14: Debugging, Analysis and Project Build](../book/labs/lab14-debugging-project.html), for the bug
   hunt, trace exercise, and full project submission checklist/rubric.
 - **Prepare:** finalize and submit your project (artifact + README)
   before this session ends; be ready to explain every part of it in

@@ -296,31 +296,51 @@ finish, then simply returns - there's nothing left to do after it.
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. In `increment(a)` from the local-scope example, why does `a` stay
-   `5` in `main` after the call?
-2. Write the base case and recursive case for a function
-   `int digit_sum(int n)` that adds up the digits of `n` (hint:
-   `n % 10` gives the last digit, `n / 10` drops it).
-3. What happens if a recursive function is missing its base case?
+**Question:** In `increment(a)` from the local-scope example, why does `a` stay
+`5` in `main` after the call?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. C passes arguments **by value** - `increment` receives a copy of
-   `a` in its own local variable `x`. Changing `x` never touches the
-   original `a` in `main`.
-2. Base case: `if (n < 10) return n;` (a single digit is already its
-   own sum). Recursive case:
-   `return n % 10 + digit_sum(n / 10);` (add the last digit, then
-   recurse on the rest).
-3. It never stops calling itself. Each call pushes another stack
-   frame until the call stack runs out of room - a stack overflow
-   crash.
+**Answer:** C passes arguments **by value** - `increment` receives a copy of
+`a` in its own local variable `x`. Changing `x` never touches the
+original `a` in `main`.
+
+---
+
+# Sample Question 2
+
+**Question:** Write the base case and recursive case for a function
+`int digit_sum(int n)` that adds up the digits of `n` (hint:
+`n % 10` gives the last digit, `n / 10` drops it).
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** Base case: `if (n < 10) return n;` (a single digit is already its
+own sum). Recursive case:
+`return n % 10 + digit_sum(n / 10);` (add the last digit, then
+recurse on the rest).
+
+---
+
+# Sample Question 3
+
+**Question:** What happens if a recursive function is missing its base case?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** It never stops calling itself. Each call pushes another stack
+frame until the call stack runs out of room - a stack overflow
+crash.
 
 ---
 
@@ -354,7 +374,7 @@ unsolved. **Week 11** addresses it: Arrays I - One-Dimensional Arrays.
   caller's variable directly through a parameter.
 - Recursion needs a **base case** (stops the calls) and a
   **recursive case** (moves toward the base case).
-- **Lab page:** `lab10-functions-scope-recursion.md` for the guided
+- **Lab page:** [Lab 10: Functions II: Scope & Recursion](../book/labs/lab10-functions-scope-recursion.html) for the guided
   recursion lab and the Fibonacci exercise.
 - **Prepare:** think about a list of 20 scores - how would you store
   all 20 with what you know today? Week 11 answers that.

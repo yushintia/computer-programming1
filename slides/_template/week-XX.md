@@ -125,19 +125,29 @@ Yushintia Pramitarini, Ph.D · Dept. of Intelligent Computing · <Date>
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample question(s) -->
 
-# Check Yourself
+# Sample Question 1
 
-1. <question>
-2. <question>
+**Question:** <question>
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. <answer>
-2. <answer>
+**Answer:** <answer>
+
+---
+
+# Sample Question 2
+
+**Question:** <question>
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** <answer>
 
 ---
 

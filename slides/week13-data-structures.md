@@ -71,12 +71,12 @@ practice. -->
 <div class="pain">
 
 You want to store 100 students, each with an ID number, a name, and a
-GPA. Right now, the only tool you have is the array - and an array
-holds ONE type. So you would need three separate arrays: one for IDs,
-one for names, one for GPAs.
+GPA. Right now, the only tool you have is a plain list - and a plain
+list holds ONE kind of item. So you would need three separate lists:
+one for IDs, one for names, one for GPAs.
 
 Now imagine you delete student #42. You must remove their ID AND their
-name AND their GPA - from three different arrays, at the same
+name AND their GPA - from three different lists, at the same
 position, every single time, forever, without ever making a mistake.
 
 </div>
@@ -119,11 +119,12 @@ and understanding it is expected before any database or systems course.
 
 # By the End of This Week, You Can
 
-1. Define a `struct` and declare variables of that type.
-2. Access struct members with the dot operator.
-3. Create and traverse an array of structs.
-4. Recognize that `&x` gives the memory address of `x`, connecting
-   back to `scanf`.
+1. Define a record type that groups related fields of different types,
+   and declare variables of that type.
+2. Read and change one field of a record by name.
+3. Create and walk through a list of records.
+4. Recognize that every variable has a memory address, and that the
+   address is what input functions need to store a value.
 
 ---
 
@@ -152,13 +153,13 @@ sync by hand.
 > slot inside it, accessed with the dot operator: `s.gpa`.
 
 ```c
-typedef struct {
+struct Student {
     int    id;
     char   name[30];
     double gpa;
-} Student;
+};
 
-Student s1 = {2025001, "Alice", 3.75};
+struct Student s1 = {2025001, "Alice", 3.75};
 printf("%d  %s  %.2f\n", s1.id, s1.name, s1.gpa);
 ```
 
@@ -168,15 +169,16 @@ printf("%d  %s  %.2f\n", s1.id, s1.name, s1.gpa);
 
 # Defining and Using a `struct`
 
-- `typedef struct { ... } Student;` defines a brand-new type named
-  `Student` - after this, `Student` works anywhere `int` or `double`
-  would, to declare a variable.
-- `Student s1 = {2025001, "Alice", 3.75};` creates one variable with
+- `struct Student { ... };` describes one record: a group of fields
+  with names, of different types. Every variable of this kind is
+  declared as `struct Student`, the same way `int` or `double` is
+  used to declare a variable.
+- `struct Student s1 = {2025001, "Alice", 3.75};` creates one variable with
   all three fields filled in, in field order.
 - `s1.id`, `s1.name`, `s1.gpa` read or write one field, using the
   **dot operator**.
 - Unlike arrays, whole structs CAN be assigned with `=`:
-  `Student copy = s1;` copies every field at once.
+  `struct Student copy = s1;` copies every field at once.
 
 ---
 
@@ -185,7 +187,7 @@ printf("%d  %s  %.2f\n", s1.id, s1.name, s1.gpa);
 # Array of Structs: Many Records, One Type
 
 ```c
-Student roster[3] = {
+struct Student roster[3] = {
     {2025001, "Alice", 3.75},
     {2025002, "Bob",   3.20},
     {2025003, "Carol", 3.90}
@@ -197,7 +199,7 @@ for (int i = 0; i < 3; i++) {
 ```
 
 - `roster` is an array, exactly like Week 11's arrays - except each
-  element is now a whole `Student`, not a single number.
+  element is now a whole `struct Student`, not a single number.
 - `roster[i].gpa` reads field `gpa` of element `i`: index first with
   `[]`, then select the field with `.`.
 - This solves last week's pain directly: one array, ID + name + GPA
@@ -238,18 +240,18 @@ Programming and Data Structures.
 #include <string.h>
 #define MAX 5
 
-typedef struct {
+struct Student {
     int    id;
     char   name[30];
     double score;
-} Student;
+};
 
-void print_roster(Student r[], int n);
-Student find_top(Student r[], int n);
+void print_roster(struct Student r[], int n);
+struct Student find_top(struct Student r[], int n);
 ```
 
-One `Student` type, and two function prototypes that take an array of
-`Student` plus a count - the same pattern as any array-processing
+One `struct Student` type, and two function prototypes that take an array of
+`struct Student` plus a count - the same pattern as any array-processing
 function since Week 11, just with a struct element type.
 
 ---
@@ -258,14 +260,14 @@ function since Week 11, just with a struct element type.
 
 ```c
 int main(void) {
-    Student roster[MAX];
+    struct Student roster[MAX];
     for (int i = 0; i < MAX; i++) {
         scanf("%d", &roster[i].id);
         scanf("%29s", roster[i].name);
         scanf("%lf", &roster[i].score);
     }
     print_roster(roster, MAX);
-    Student top = find_top(roster, MAX);
+    struct Student top = find_top(roster, MAX);
     printf("Top student: %s (%.2f)\n", top.name, top.score);
     return 0;
 }
@@ -280,14 +282,14 @@ int main(void) {
 # Worked Example: Student Records (3/3)
 
 ```c
-void print_roster(Student r[], int n) {
+void print_roster(struct Student r[], int n) {
     printf("%-8s %-12s %6s\n", "ID", "Name", "Score");
     for (int i = 0; i < n; i++)
         printf("%-8d %-12s %6.2f\n", r[i].id, r[i].name, r[i].score);
 }
 
-Student find_top(Student r[], int n) {
-    Student best = r[0];
+struct Student find_top(struct Student r[], int n) {
+    struct Student best = r[0];
     for (int i = 1; i < n; i++)
         if (r[i].score > best.score) best = r[i];
     return best;
@@ -295,7 +297,7 @@ Student find_top(Student r[], int n) {
 ```
 
 `best = r[i]` is whole-struct assignment: it copies all three fields
-at once, the same way `Student top = find_top(...)` copies the whole
+at once, the same way `struct Student top = find_top(...)` copies the whole
 returned record into `top`.
 
 ---
@@ -313,27 +315,47 @@ returned record into `top`.
 
 ---
 
-<!-- SLOT 15: Check yourself -->
+<!-- SLOT 15: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. Given `Student s;`, how do you read its `id` field with `scanf`?
-   How do you read its `name` field?
-2. What does `Student best = r[0];` copy - just one field, or all of
-   them?
-3. Why can't three separate arrays (`ids`, `names`, `gpas`) replace a
-   single `Student roster[]` safely?
+**Question:** Given `struct Student s;`, how do you read its `id` field with `scanf`?
+How do you read its `name` field?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. `scanf("%d", &s.id)` (needs `&`, it's a scalar); `scanf("%29s",
-   s.name)` (no `&`, it's already an array).
-2. All of them - a struct assignment copies every field at once.
-3. The three arrays can silently drift out of sync (one updated,
-   others not); a struct keeps every field of one record together by
-   construction, so that can't happen.
+**Answer:** `scanf("%d", &s.id)` (needs `&`, it's a scalar); `scanf("%29s",
+s.name)` (no `&`, it's already an array).
+
+---
+
+# Sample Question 2
+
+**Question:** What does `struct Student best = r[0];` copy - just one field, or all of
+them?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** All of them - a struct assignment copies every field at once.
+
+---
+
+# Sample Question 3
+
+**Question:** Why can't three separate arrays (`ids`, `names`, `gpas`) replace a
+single `struct Student roster[]` safely?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** The three arrays can silently drift out of sync (one updated,
+others not); a struct keeps every field of one record together by
+construction, so that can't happen.
 
 ---
 
@@ -371,11 +393,11 @@ and finalizing your semester project.
 
 - A `struct` groups fields of different types under one name, accessed
   with the dot operator (`s.field`).
-- An array of structs (`Student roster[N]`) keeps many complete
+- An array of structs (`struct Student roster[N]`) keeps many complete
   records in sync automatically.
 - `&x` is the address of `x` - the idea behind `scanf`'s `&`, and the
   doorway to pointers in later courses.
-- **Lab page:** `book/src/labs/lab13-data-structures.md`, for the
+- **Lab page:** [Lab 13: Basic Data Structures](../book/labs/lab13-data-structures.html), for the
   contact-book and student-records exercises, plus the sort-by-score
   challenge.
 - **Prepare:** think about which of the four project options (contact

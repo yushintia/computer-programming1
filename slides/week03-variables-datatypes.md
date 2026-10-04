@@ -111,10 +111,11 @@ losing the decimal part of a price.
 
 # By the End of This Week, You Can
 
-1. Declare variables of type `int`, `float`/`double`, and `char`.
-2. Assign values, use constants (`const`, `#define`), and perform
-   arithmetic.
-3. Use `scanf` to read a value from the user, making programs
+1. Name the basic data types (whole numbers, decimal numbers, single
+   characters) and declare a variable of each.
+2. Assign values to variables, define named constants that cannot
+   change, and perform arithmetic.
+3. Read a value typed by the user into a variable, making programs
    interactive.
 4. Explain that a variable is a named location in memory with a fixed
    type and size.
@@ -271,11 +272,10 @@ not the quotient.
 rounded. This is called **truncation**: it always cuts toward zero, so
 `3.9` becomes `3`, same as `3.1` becomes `3`.
 
-To get the decimal result, force one number to be a decimal first, by
-casting:
+To get the decimal result, write one number as a decimal first:
 
 ```c
-(double)a / b   /* gives 3.333... instead of 3 */
+10.0 / 3   /* gives 3.333... instead of 3 */
 ```
 
 ---
@@ -371,13 +371,13 @@ more.)
 int main(void) {
     int a = 7, b = 2;
     printf("int / int = %d\n", a / b);               /* 3   */
-    printf("cast to double = %.2f\n", (double)a / b); /* 3.50 */
+    printf("with a decimal = %.2f\n", 7.0 / b);     /* 3.50 */
     return 0;
 }
 ```
 
-`(double)a` converts `a`'s value to decimal before the division
-happens, so the result keeps its fractional part: `3.50`, not `3`.
+`7.0` is written as a decimal number, so the division keeps its
+fractional part: `3.50`, not `3`.
 
 ---
 
@@ -387,36 +387,56 @@ happens, so the result keeps its fractional part: `3.50`, not `3`.
 
 <div class="cardlist">
 <div class="card"><div class="h">Forgetting &amp; in scanf</div><div class="d">Program crashes or reads garbage. Always write scanf("%d", &amp;x), never scanf("%d", x).</div></div>
-<div class="card"><div class="h">int / int when you want decimals</div><div class="d">Result is truncated, e.g. 7/2 gives 3. Cast one side: (double)a / b.</div></div>
+<div class="card"><div class="h">int / int when you want decimals</div><div class="d">Result is truncated, e.g. 7/2 gives 3. Write one side as a decimal: 7.0 / 2.</div></div>
 <div class="card"><div class="h">Wrong format specifier</div><div class="d">%d for a double gives garbage output. Use %lf for double in scanf.</div></div>
 <div class="card"><div class="h">Reading an uninitialized variable</div><div class="d">Unpredictable value - could be anything. Always assign before reading.</div></div>
 </div>
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. You write `9 / 5` in C to convert Celsius to Fahrenheit. What does
-   this give you, and how would you fix it so it computes correctly?
-2. What happens if you call `scanf("%d", x)` instead of
-   `scanf("%d", &x)`?
-3. You need a value that never changes throughout the program, like
-   the number of days in a week. Which tool from this week fits, and
-   why?
+**Question:** You write `9 / 5` in C to convert Celsius to Fahrenheit. What does
+this give you, and how would you fix it so it computes correctly?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. `9 / 5` is integer division, giving `1`, not `1.8`. Write `9.0/5.0`,
-   or cast one operand to `double`, to get the correct decimal result.
-2. `scanf` gets the current (garbage) *value* of `x` instead of its
-   *address*, so it does not know where to write the input - this
-   typically crashes the program or corrupts memory.
-3. `const` (e.g. `const int DAYS = 7;`) - it is a typed constant the
-   compiler will not let you accidentally change.
+**Answer:** `9 / 5` is integer division, giving `1`, not `1.8`. Write `9.0 / 5.0`
+so the division works on decimal numbers and gives the correct result.
+
+---
+
+# Sample Question 2
+
+**Question:** What happens if you call `scanf("%d", x)` instead of
+`scanf("%d", &x)`?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** `scanf` gets the current (garbage) *value* of `x` instead of its
+*address*, so it does not know where to write the input - this
+typically crashes the program or corrupts memory.
+
+---
+
+# Sample Question 3
+
+**Question:** You need a value that never changes throughout the program, like
+the number of days in a week. Which tool from this week fits, and
+why?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** `const` (e.g. `const int DAYS = 7;`) - it is a typed constant the
+compiler will not let you accidentally change.
 
 ---
 
@@ -450,9 +470,9 @@ and logical operators, and explicit type casts.
   `char` reserve different amounts of space.
 - `scanf("%d", &x)` reads a value from the user into a variable -
   never forget the `&`.
-- Integer division truncates (`7/2` is `3`); cast with `(double)` to
-  keep the decimal part.
-- **Lab page:** `book/src/labs/lab03-variables-datatypes.md` for the
+- Integer division truncates (`7/2` is `3`); write `7.0 / 2` to keep
+  the decimal part.
+- **Lab page:** [Lab 03: Variables, Data Types & Expressions](../book/labs/lab03-variables-datatypes.html) for the
   temperature converter, circle geometry, and swap exercises.
 - **Prepare:** review `%d`, `%f`/`%lf`, and `%c` before class - Week 4
   builds directly on these format specifiers.

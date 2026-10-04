@@ -117,10 +117,13 @@ Both ideas show up in almost every technical interview.
 
 # By the End of This Week, You Can
 
-1. Declare and traverse a 2-D array using nested loops.
+1. Store and walk through a grid of values (rows and columns) with
+   nested loops.
 2. Compute row sums and column sums on a 2-D array.
-3. Declare a C string as a `char` array and explain the `\0` terminator.
-4. Use `strlen`, `strcpy`, `strcmp`, and `strcat` from `<string.h>`.
+3. Explain how text is stored as characters followed by an end marker,
+   and why that end marker matters.
+4. Use the standard text-handling library to measure, copy, compare,
+   and join strings.
 
 ---
 
@@ -153,6 +156,9 @@ C computes `m[r][c]`'s position for you.
 > A **C string** is not a built-in type. It is a `char` array ending
 > with the special value `'\0'` (the null terminator), which marks
 > "the string stops here."
+>
+> For example, `char name[] = "Ana";` stores `'A'`, `'n'`, `'a'`, then
+> `'\0'`: four cells in all, the last one marking the end.
 
 ---
 
@@ -323,23 +329,43 @@ int is_palindrome(const char s[]) {
 
 ---
 
-<!-- SLOT 17: Check yourself -->
+<!-- SLOT 17: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. `int m[2][3];` - how many total integers does this array hold?
-2. `char word[] = "Hi";` - what is stored in `word`, byte by byte?
-3. Why is `if (s1 == s2)` almost never what you want when comparing two
-   C strings?
+**Question:** `int m[2][3];` - how many total integers does this array hold?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. 2 x 3 = 6 integers.
-2. `'H'`, `'i'`, `'\0'` - three bytes total, even though "Hi" is 2 letters.
-3. `==` compares the two array addresses, not their contents - it is
-   almost always false even when the text is identical. Use `strcmp`.
+**Answer:** 2 x 3 = 6 integers.
+
+---
+
+# Sample Question 2
+
+**Question:** `char word[] = "Hi";` - what is stored in `word`, byte by byte?
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** `'H'`, `'i'`, `'\0'` - three bytes total, even though "Hi" is 2 letters.
+
+---
+
+# Sample Question 3
+
+**Question:** Why is `if (s1 == s2)` almost never what you want when comparing two
+C strings?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** `==` compares the two array addresses, not their contents - it is
+almost always false even when the text is identical. Use `strcmp`.
 
 ---
 
@@ -379,7 +405,7 @@ together** unsolved. **Week 13** addresses it: Basic Data Structures
 - A C string is a `char` array ending in `'\0'` - always leave room for it.
 - `<string.h>` gives you `strlen`, `strcpy`, `strcat`, `strcmp` - never
   compare strings with `==`.
-- **Lab page:** `book/src/labs/lab12-arrays-2d-strings.md`, for the
+- **Lab page:** [Lab 12: Arrays II: 2-D Arrays & Strings](../book/labs/lab12-arrays-2d-strings.html), for the
   matrix, text-statistics, and name-sorter exercises, plus the
   transpose challenge.
 - **Prepare:** think about a piece of real data (a contact, a product)

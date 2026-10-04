@@ -120,8 +120,9 @@ in entry-level coding interviews.
    minimum/maximum, and linear search.
 3. Explain why indexing starts at 0, and what out-of-bounds access
    causes.
-4. Recognize a C string as a `char` array, and preview how sorting
-   and searching an array work.
+4. Recognize that a text string is a row of characters ending in a
+   special end marker, and preview how sorting and searching an array
+   work.
 
 ---
 
@@ -132,11 +133,12 @@ in entry-level coding interviews.
 An array is a **contiguous block of memory** - one long, unbroken run
 of boxes, all the same size, sitting right next to each other.
 
-`a[i]` is really shorthand for `*(a + i)`: the start address of the
-array, plus `i` times the size of one element. That is *why*
-`a[5]` on a 5-element array reads random memory - the CPU computes
-`start + 5 x 4 bytes` and fetches whatever happens to be sitting
-there. The computer does not check this for you; you must.
+`a[i]` names the element at position `i`, counting from 0. Because the
+elements sit side by side in order, the computer can find any of them
+by counting from the start of the array. That is *why* `a[5]` on a
+5-element array (valid positions are 0 to 4) reads whatever sits past
+the end of the array. The computer does not check this for you; you
+must.
 
 ---
 
@@ -234,25 +236,6 @@ the loop walks the array.
 
 <!-- SLOT 14: Mechanics -->
 
-# Linear Search
-
-```c
-int search(int a[], int n, int target) {
-    for (int i = 0; i < n; i++)
-        if (a[i] == target) return i;
-    return -1;
-}
-```
-
-Check each element left to right; return its index the moment it
-matches, or `-1` if the loop finishes without a match. This works on
-**any** array, sorted or not - but in the worst case it checks every
-single element.
-
----
-
-<!-- SLOT 15: Mechanics -->
-
 # Arrays as Function Parameters
 
 ```c
@@ -267,6 +250,25 @@ A function receiving an array has no way to know how big it is - the
 size information does not travel with it. **Always pass the size
 `n` as a separate parameter**, every time you write a function that
 takes an array.
+
+---
+
+<!-- SLOT 15: Mechanics -->
+
+# Linear Search
+
+```c
+int search(int a[], int n, int target) {
+    for (int i = 0; i < n; i++)
+        if (a[i] == target) return i;
+    return -1;
+}
+```
+
+Check each element left to right; return its index the moment it
+matches, or `-1` if the loop finishes without a match. This works on
+**any** array, sorted or not - but in the worst case it checks every
+single element.
 
 ---
 
@@ -381,7 +383,7 @@ and maximum together - one pass, three statistics.
 | `if (a[i] < min) min = a[i];` | Updates the running minimum only when a smaller value shows up |
 | `(double)sum / N` | Casts before dividing, so the average keeps its decimal part |
 
-**Output:** `Sum: 369`  `Avg: 46.13`  `Min: 5`  `Max: 99`
+**Output:** `Sum: 369`  `Avg: 46.12`  `Min: 5`  `Max: 99`
 
 ---
 
@@ -398,32 +400,52 @@ and maximum together - one pass, three statistics.
 
 ---
 
-<!-- SLOT N: Check yourself -->
+<!-- SLOT N: Sample questions -->
 
-# Check Yourself
+# Sample Question 1
 
-1. `int a[5]` is declared. What is the valid range of indices, and
-   what happens if you read `a[5]`?
-2. Write a loop that finds the **maximum** value in an array `a` of
-   size `n`.
-3. Why must you always pass an array's size `n` into a function
-   alongside the array itself?
+**Question:** `int a[5]` is declared. What is the valid range of indices, and
+what happens if you read `a[5]`?
 
 ---
 
-# Answers
+# Sample Question 1: Answer
 
-1. Valid indices are `0` through `4`. `a[5]` is out-of-bounds - it
-   reads whatever memory happens to sit right after the array, which
-   is unpredictable and never safe.
-2. ```c
-   int max = a[0];
-   for (int i = 1; i < n; i++)
-       if (a[i] > max) max = a[i];
-   ```
-3. A function receiving an array parameter has no way to know how
-   many elements it holds - that information doesn't travel with the
-   array. Without `n`, the function cannot know where to stop.
+**Answer:** Valid indices are `0` through `4`. `a[5]` is out-of-bounds - it
+reads whatever memory happens to sit right after the array, which
+is unpredictable and never safe.
+
+---
+
+# Sample Question 2
+
+**Question:** Write a loop that finds the **maximum** value in an array `a` of
+size `n`.
+
+---
+
+# Sample Question 2: Answer
+
+**Answer:** ```c
+int max = a[0];
+for (int i = 1; i < n; i++)
+    if (a[i] > max) max = a[i];
+```
+
+---
+
+# Sample Question 3
+
+**Question:** Why must you always pass an array's size `n` into a function
+alongside the array itself?
+
+---
+
+# Sample Question 3: Answer
+
+**Answer:** A function receiving an array parameter has no way to know how
+many elements it holds - that information doesn't travel with the
+array. Without `n`, the function cannot know where to stop.
 
 ---
 
@@ -456,7 +478,7 @@ unsolved. **Week 12** addresses it: Arrays II - 2-D Arrays & Strings.
 - Sum, average, min/max, and linear search all share one shape: walk
   the array once with a `for` loop, updating a running value.
 - Always pass an array's size `n` as a separate function parameter.
-- **Lab page:** `lab11-arrays-1d.md` - the guided stats lab, and this
+- **Lab page:** [Lab 11: Arrays I: One-Dimensional Arrays](../book/labs/lab11-arrays-1d.html) - the guided stats lab, and this
   week's project announcement (due end of Week 14).
 - **Prepare:** review today's `search` function before Week 12, which
   builds on it for searching arrays of strings.
